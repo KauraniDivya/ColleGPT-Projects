@@ -97,7 +97,7 @@ const Home = () => {
           <div className="bg-white dark:bg-slate-800 rounded-lg max-w-2xl w-full p-6 shadow-xl">
             <div className="flex justify-between items-start mb-4">
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                Welcome to GATE CS Preparation Platform! 🎯
+                Welcome to Hackathon Preparation Platform! 🎯
               </h2>
               <button
                 onClick={handleModalClose}
@@ -138,7 +138,7 @@ const Home = () => {
                 Got it!
               </button>
               <a
-                href="https://github.com/KauraniDivya/ColleGPT-GATE"
+                href="https://github.com/KauraniDivya/ColleGPT-Hackathon"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"

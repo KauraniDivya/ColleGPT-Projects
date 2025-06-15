@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import HeroSection from "../components/home/HeroSection";
 import MaterialsSection from "../components/home/MaterialsSection";
 import PlannerSection from "../components/home/PlannerSection";
-import ExamInfoSection from "../components/home/ExamInfoSection";
 import CommunitySection from "../components/home/CommunitySection";
 import SuccessStoriesSection from "../components/home/SuccessStoriesSection";
 import BlogsSection from "../components/home/BlogsSection";
@@ -155,7 +154,6 @@ const Home = () => {
       <HeroSection ref={heroRef} materialsRef={materialsRef} />
       <MaterialsSection ref={materialsRef} />
       <PlannerSection ref={plannerRef} />
-      <ExamInfoSection ref={examInfoRef} />
       <CommunitySection ref={communityRef} />
       <SuccessStoriesSection ref={successRef} />
       <BlogsSection ref={blogsRef} />

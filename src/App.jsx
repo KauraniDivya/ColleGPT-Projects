@@ -5,6 +5,8 @@ import Layout from './components/common/Layout';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import { Toaster } from 'react-hot-toast';
+import HeroSection from "./components/home/HeroSection";
+import HackathonSection from "./components/home/HackathonSection";
 
 function App() {
   return (

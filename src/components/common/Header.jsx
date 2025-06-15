@@ -79,8 +79,8 @@ const Header = () => {
               LLEGPT
               <div className="flex items-center ml-2">
                 <span className="text-sm font-medium text-gray-400 dark:text-gray-500">/</span>
-                <span className="text-sm font-semibold bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent px-1">
-                  GATE
+                <span className="text-sm font-semibold bg-gradient-to-r from-indigo-700 to-purple-700 bg-clip-text text-transparent px-1">
+                  HACK
                 </span>
               </div>
             </span>
@@ -182,8 +182,8 @@ const Header = () => {
                 LLEGPT
                 <div className="flex items-center ml-2">
                   <span className="text-sm font-medium text-gray-400 dark:text-gray-500">/</span>
-                  <span className="text-sm font-semibold bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent px-1">
-                    GATE
+                  <span className="text-sm font-semibold from-indigo-700 to-purple-700 to-green-600 bg-clip-text text-transparent px-1">
+                    HACK
                   </span>
                 </div>
               </span>

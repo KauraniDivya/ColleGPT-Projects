@@ -69,171 +69,214 @@ const CommunitySection = forwardRef((props, ref) => {
  }, []);
 
  // Community channels
- const channels = [
-   {
-     id: "general",
-     name: "General Discussion",
-     members: 2400,
-     unread: 12,
-     category: "Study"
-   },
-   {
-     id: "gate-prep",
-     name: "GATE Preparation",
-     members: 3200,
-     unread: 28,
-     category: "Study"
-   },
-   {
-     id: "doubt-solving",
-     name: "Doubt Solving",
-     members: 1800,
-     unread: 5,
-     category: "Study"
-   },
-   {
-     id: "mock-tests",
-     name: "Mock Test Discussion",
-     members: 1500,
-     unread: 0,
-     category: "Practice"
-   },
-   {
-     id: "career-guidance",
-     name: "Career Guidance",
-     members: 2100,
-     unread: 15,
-     category: "Career"
-   },
-   {
-     id: "success-stories",
-     name: "Success Stories",
-     members: 2800,
-     unread: 3,
-     category: "Motivation"
-   },
- ];
+const channels = [
+  {
+    id: "general",
+    name: "General Discussion",
+    members: 2400,
+    unread: 12,
+    category: "Community"
+  },
+  {
+    id: "hackathon-announcements",
+    name: "Hackathon Announcements",
+    members: 3200,
+    unread: 28,
+    category: "Events"
+  },
+  {
+    id: "team-formation",
+    name: "Team Formation",
+    members: 1800,
+    unread: 5,
+    category: "Collaboration"
+  },
+  {
+    id: "project-showcase",
+    name: "Project Showcase",
+    members: 1500,
+    unread: 0,
+    category: "Projects"
+  },
+  {
+    id: "tech-help",
+    name: "Tech Help & Resources",
+    members: 2100,
+    unread: 15,
+    category: "Support"
+  },
+  {
+    id: "success-stories",
+    name: "Winner Stories",
+    members: 2800,
+    unread: 3,
+    category: "Inspiration"
+  },
+];
 
- // Sample community members
- const members = [
-   {
-     id: 1,
-     name: "Priya Sharma",
-     username: "priya_cs",
-     avatar: "https://randomuser.me/api/portraits/women/45.jpg",
-     status: "online",
-     role: "moderator",
-     rank: "AIR 45"
-   },
-   {
-     id: 2,
-     name: "Rahul Kumar",
-     username: "rahul_gate",
-     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-     status: "online",
-     role: "member",
-     rank: "AIR 127"
-   },
-   {
-     id: 3,
-     name: "Ananya Singh",
-     username: "ananya_cs",
-     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-     status: "idle",
-     role: "member",
-     rank: "Preparing"
-   },
-   {
-     id: 4,
-     name: "Arjun Patel",
-     username: "arjun_da",
-     avatar: "https://randomuser.me/api/portraits/men/55.jpg",
-     status: "online",
-     role: "mentor",
-     rank: "AIR 23"
-   }
- ];
+// Sample community members
+const members = [
+  {
+    id: 1,
+    name: "Priya Sharma",
+    username: "priya_dev",
+    avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+    status: "online",
+    role: "moderator",
+    rank: "5x Winner"
+  },
+  {
+    id: 2,
+    name: "Rahul Kumar",
+    username: "rahul_fullstack",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    status: "online",
+    role: "member",
+    rank: "AI Specialist"
+  },
+  {
+    id: 3,
+    name: "Ananya Singh",
+    username: "ananya_ui",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    status: "idle",
+    role: "member",
+    rank: "Design Expert"
+  },
+  {
+    id: 4,
+    name: "Arjun Patel",
+    username: "arjun_mentor",
+    avatar: "https://randomuser.me/api/portraits/men/55.jpg",
+    status: "online",
+    role: "mentor",
+    rank: "Tech Lead"
+  }
+];
 
- // Sample messages
- const messages = {
-   "general": [
-     {
-       id: 1,
-       user: members[0],
-       message: "Welcome to our GATE CS community! Feel free to ask any questions about preparation strategies or specific topics.",
-       time: "10:30 AM",
-       reactions: [
-         { emoji: "👋", count: 15 },
-         { emoji: "❤️", count: 8 }
-       ]
-     },
-     {
-       id: 2,
-       user: members[1],
-       message: "Hi everyone! I'm struggling with Dynamic Programming concepts. Can someone suggest good resources or practice problems?",
-       time: "10:45 AM",
-       reactions: [
-         { emoji: "🤔", count: 5 }
-       ]
-     },
-     {
-       id: 3,
-       user: members[3],
-       message: "For DP, I recommend starting with basic problems like Fibonacci, then move to LCS, LIS. GeeksforGeeks has a good practice section. Also, try solving GATE PYQs on DP - they follow a pattern!",
-       time: "10:50 AM",
-       reactions: [
-         { emoji: "👍", count: 12 },
-         { emoji: "🙏", count: 6 }
-       ]
-     },
-     {
-       id: 4,
-       user: members[2],
-       message: "Thanks @arjun_da! Your suggestion helped me a lot. I've solved 20+ DP problems this week and finally understanding the approach.",
-       time: "11:15 AM",
-       reactions: [
-         { emoji: "🎉", count: 8 },
-         { emoji: "💪", count: 4 }
-       ]
-     }
-   ]
- };
+// Updated community stats
+const communityStats = [
+  { value: "15K+", label: "Active Hackers", icon: Users, color: "text-purple-600" },
+  { value: "3.5K+", label: "Daily Messages", icon: MessageSquare, color: "text-violet-600" },
+  { value: "200+", label: "Active Teams", icon: BookOpen, color: "text-purple-500" },
+  { value: "89%", label: "Project Success", icon: Award, color: "text-violet-500" },
+];
 
- // Community stats
- const communityStats = [
-   { value: "8.5K+", label: "Active Members", icon: Users, color: "text-green-600" },
-   { value: "2.3K+", label: "Daily Messages", icon: MessageSquare, color: "text-blue-600" },
-   { value: "150+", label: "Study Groups", icon: BookOpen, color: "text-purple-600" },
-   { value: "95%", label: "Success Rate", icon: Award, color: "text-orange-600" },
- ];
+// Updated community features
+const communityFeatures = [
+  {
+    title: "Expert Mentorship",
+    description: "Get guidance from industry professionals and hackathon winners",
+    icon: Target,
+    color: "from-purple-500 to-violet-400"
+  },
+  {
+    title: "Team Formation",
+    description: "Find perfect teammates with complementary skills for your next hackathon",
+    icon: Users,
+    color: "from-violet-500 to-purple-400"
+  },
+  {
+    title: "Project Collaboration",
+    description: "Work together on innovative projects and share resources",
+    icon: MessageSquare,
+    color: "from-purple-600 to-violet-500"
+  },
+  {
+    title: "Skill Development",
+    description: "Learn new technologies and improve your development skills",
+    icon: TrendingUp,
+    color: "from-violet-600 to-purple-500"
+  }
+];
 
- // Community features
- const communityFeatures = [
-   {
-     title: "Expert Mentorship",
-     description: "Get guidance from GATE toppers and industry professionals",
-     icon: Target,
-     color: "from-green-500 to-emerald-400"
-   },
-   {
-     title: "Doubt Resolution",
-     description: "24/7 doubt solving with detailed explanations and multiple approaches",
-     icon: MessageSquare,
-     color: "from-blue-500 to-cyan-400"
-   },
-   {
-     title: "Study Groups",
-     description: "Join topic-wise study groups and collaborative learning sessions",
-     icon: Users,
-     color: "from-purple-500 to-violet-500"
-   },
-   {
-     title: "Mock Test Discussions",
-     description: "Analyze mock tests together and learn from mistakes",
-     icon: TrendingUp,
-     color: "from-orange-500 to-red-500"
-   }
- ];
+// Sample messages - Updated for hackathon community
+const messages = {
+  "general": [
+    {
+      id: 1,
+      user: members[0],
+      message: "Welcome to our Hackathon Community! Feel free to ask any questions about project ideas, team formation, or development strategies.",
+      time: "10:30 AM",
+      reactions: [
+        { emoji: "👋", count: 15 },
+        { emoji: "❤️", count: 8 }
+      ]
+    },
+    {
+      id: 2,
+      user: members[1],
+      message: "Hi everyone! I'm looking for teammates for the upcoming AI Innovation Challenge. I'm strong in backend development but need someone with ML expertise. Anyone interested?",
+      time: "10:45 AM",
+      reactions: [
+        { emoji: "🤝", count: 5 }
+      ]
+    },
+    {
+      id: 3,
+      user: members[3],
+      message: "For AI projects, I recommend starting with TensorFlow or PyTorch. Also check out Hugging Face for pre-trained models - saves tons of time during hackathons! Happy to mentor anyone getting started.",
+      time: "10:50 AM",
+      reactions: [
+        { emoji: "👍", count: 12 },
+        { emoji: "🙏", count: 6 }
+      ]
+    },
+    {
+      id: 4,
+      user: members[2],
+      message: "Thanks @arjun_mentor! Your guidance helped our team win the last hackathon. We implemented your suggestion about microservices architecture and it made our project scalable.",
+      time: "11:15 AM",
+      reactions: [
+        { emoji: "🎉", count: 8 },
+        { emoji: "🏆", count: 4 }
+      ]
+    }
+  ],
+  "hackathon-announcements": [
+    {
+      id: 1,
+      user: members[0],
+      message: "🚨 NEW HACKATHON ALERT! The AI Innovation Challenge 2025 is now open for registration. $50,000 in prizes! Registration deadline: July 10th. Link in bio!",
+      time: "9:00 AM",
+      reactions: [
+        { emoji: "🔥", count: 25 },
+        { emoji: "💰", count: 18 }
+      ]
+    },
+    {
+      id: 2,
+      user: members[3],
+      message: "Climate Tech Hackathon is accepting project submissions until August 15th. Focus on sustainability and environmental impact. Great opportunity for social good projects!",
+      time: "9:30 AM",
+      reactions: [
+        { emoji: "🌱", count: 20 },
+        { emoji: "🌍", count: 15 }
+      ]
+    }
+  ],
+  "team-formation": [
+    {
+      id: 1,
+      user: members[1],
+      message: "Looking for a UI/UX designer for the Web3 DeFi hackathon. Our team has 2 blockchain developers and 1 full-stack developer. DM me if interested!",
+      time: "2:15 PM",
+      reactions: [
+        { emoji: "🎨", count: 8 }
+      ]
+    },
+    {
+      id: 2,
+      user: members[2],
+      message: "Frontend React developer here! Available for any upcoming hackathons. Experienced with Next.js, TypeScript, and modern CSS frameworks. Let's build something amazing! 🚀",
+      time: "2:45 PM",
+      reactions: [
+        { emoji: "⚛️", count: 12 },
+        { emoji: "🚀", count: 6 }
+      ]
+    }
+  ]
+};
 
  // Animation variants
  const containerVariants = {
@@ -272,15 +315,15 @@ const CommunitySection = forwardRef((props, ref) => {
    >
      {/* Background Elements */}
      <div className="absolute inset-0 -z-10 overflow-hidden">
-       <div className="absolute top-0 right-0 w-[800px] h-[600px] bg-gradient-to-b from-green-500/5 via-emerald-500/5 to-transparent rounded-full filter blur-[100px]"></div>
-       <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-gradient-to-tr from-blue-500/5 via-green-500/5 to-transparent rounded-full filter blur-[100px]"></div>
+       <div className="absolute top-0 right-0 w-[800px] h-[600px] bg-gradient-to-b from-[#8B5CF6]/5 via-[#A78BFA]/5 to-transparent rounded-full filter blur-[100px]"></div>
+       <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-gradient-to-tr from-[#8B5CF6]/5 via-[#A78BFA]/5 to-transparent rounded-full filter blur-[100px]"></div>
      </div>
 
      {/* Dynamic cursor light effect */}
      <div
        className="absolute inset-0 -z-5 pointer-events-none"
        style={{
-         background: `radial-gradient(circle 350px at ${mousePosition.x}px ${mousePosition.y}px, rgba(34,197,94,0.08), transparent 80%)`,
+         background: `radial-gradient(circle 350px at ${mousePosition.x}px ${mousePosition.y}px, rgba(139,92,246,0.08), transparent 80%)`,
        }}
      />
 
@@ -305,37 +348,37 @@ const CommunitySection = forwardRef((props, ref) => {
              viewport={{ once: true }}
              transition={{ duration: 0.6 }}
            >
-             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm bg-green-50/80 dark:bg-green-900/30 backdrop-blur-sm border border-green-200/30 dark:border-green-800/30 mb-4">
-               <span className="inline-block w-2 h-2 rounded-full bg-green-600 mr-2 animate-pulse"></span>
-               <span className="bg-gradient-to-r from-green-700 dark:from-green-400 to-emerald-600 dark:to-emerald-300 bg-clip-text text-transparent font-medium">
+             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 backdrop-blur-sm border border-[#8B5CF6]/20 dark:border-[#8B5CF6]/30 mb-4">
+               <span className="inline-block w-2 h-2 rounded-full bg-[#8B5CF6] mr-2 animate-pulse"></span>
+               <span className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent font-medium">
                  Connect & Learn Together
                </span>
              </span>
            </motion.div>
            
-           <motion.h2
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6, delay: 0.1 }}
-             className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white"
-           >
-             Join Our Thriving
-             <span className="text-green-600 dark:text-green-400 block md:inline">
-               {" "}GATE Community
-             </span>
-           </motion.h2>
-           
-           <motion.p
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6, delay: 0.2 }}
-             className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0"
-           >
-             Connect with thousands of GATE aspirants, share knowledge, solve doubts together, 
-             and accelerate your preparation with peer support and expert guidance.
-           </motion.p>
+<motion.h2
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white"
+>
+  Join Our Thriving
+  <span className="text-[#8B5CF6] dark:text-[#A78BFA] block md:inline">
+    {" "}Developer Community
+  </span>
+</motion.h2>
+
+<motion.p
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0"
+>
+  Connect with thousands of developers, share innovative ideas, form winning teams, 
+  and accelerate your hackathon journey with peer support and expert mentorship.
+</motion.p>
            
            {/* Community stats */}
            <motion.div 
@@ -350,7 +393,7 @@ const CommunitySection = forwardRef((props, ref) => {
                  <div className={`w-12 h-12 rounded-xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mx-auto mb-2 ${stat.color}`}>
                    <stat.icon className="w-6 h-6" />
                  </div>
-                 <div className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text text-transparent">
+                 <div className="text-xl font-bold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent">
                    {stat.value}
                  </div>
                  <div className="text-xs text-gray-600 dark:text-gray-400">
@@ -368,7 +411,7 @@ const CommunitySection = forwardRef((props, ref) => {
              transition={{ duration: 0.6, delay: 0.4 }}
              className="mt-8"
            >
-             <button className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg shadow-lg hover:shadow-green-500/20 transition-all">
+             <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] hover:from-[#7C3AED] hover:to-[#8B5CF6] text-white font-medium rounded-lg shadow-lg hover:shadow-[#8B5CF6]/20 transition-all">
                <Users className="w-5 h-5 mr-2" />
                <span>Join Community</span>
                <ArrowRight className="w-4 h-4 ml-2" />
@@ -406,13 +449,13 @@ const CommunitySection = forwardRef((props, ref) => {
            <div className="bg-gray-50 dark:bg-gray-800 px-6 py-4 border-b border-gray-200 dark:border-gray-700">
              <div className="flex items-center justify-between">
                <div className="flex items-center">
-                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white">
+                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B5CF6] to-[#A78BFA] flex items-center justify-center text-white">
                    <Users className="w-5 h-5" />
                  </div>
                  <div className="ml-3">
-                   <h3 className="font-bold text-gray-900 dark:text-white">GATE CS Community</h3>
+                   <h3 className="font-bold text-gray-900 dark:text-white">Hackathon Community</h3>
                    <div className="text-xs text-gray-500 dark:text-gray-400 flex items-center">
-                     <div className="w-2 h-2 bg-green-500 rounded-full mr-1.5"></div>
+                     <div className="w-2 h-2 bg-[#8B5CF6] rounded-full mr-1.5"></div>
                      8,520 online
                    </div>
                  </div>
@@ -441,18 +484,18 @@ const CommunitySection = forwardRef((props, ref) => {
                        key={channel.id}
                        className={`px-3 py-2 cursor-pointer flex items-center justify-between group rounded-lg ${
                          activeChannel === channel.id 
-                           ? "bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400"
+                           ? "bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 text-[#8B5CF6] dark:text-[#A78BFA]"
                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                        }`}
                        onClick={() => setActiveChannel(channel.id)}
                      >
                        <div className="flex items-center min-w-0">
-                         <Hash className={`w-4 h-4 mr-2 flex-shrink-0 ${activeChannel === channel.id ? "text-green-500" : "text-gray-400"}`} />
+                         <Hash className={`w-4 h-4 mr-2 flex-shrink-0 ${activeChannel === channel.id ? "text-[#8B5CF6]" : "text-gray-400"}`} />
                          <span className="text-sm truncate">{channel.name}</span>
                        </div>
                        
                        {channel.unread > 0 && (
-                         <div className="min-w-5 h-5 bg-green-500 dark:bg-green-600 rounded-full text-[10px] text-white font-medium flex items-center justify-center px-1.5">
+                         <div className="min-w-5 h-5 bg-[#8B5CF6] dark:bg-[#A78BFA] rounded-full text-[10px] text-white font-medium flex items-center justify-center px-1.5">
                            {channel.unread}
                          </div>
                        )}
@@ -471,7 +514,7 @@ const CommunitySection = forwardRef((props, ref) => {
                        className="w-full h-full object-cover"
                      />
                    </div>
-                   <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-gray-50 dark:border-gray-800"></div>
+                   <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#8B5CF6] rounded-full border-2 border-gray-50 dark:border-gray-800"></div>
                  </div>
                  
                  <div className="ml-2 flex-1 min-w-0">
@@ -506,17 +549,17 @@ const CommunitySection = forwardRef((props, ref) => {
                {/* Messages */}
                <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white dark:bg-gray-900">
                  {/* Welcome Message */}
-                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg p-4 mb-6 border border-green-100 dark:border-green-800/20">
+                 <div className="bg-gradient-to-r from-[#8B5CF6]/10 to-[#A78BFA]/10 dark:from-[#8B5CF6]/20 dark:to-[#A78BFA]/20 rounded-lg p-4 mb-6 border border-[#8B5CF6]/20 dark:border-[#8B5CF6]/30">
                    <div className="flex items-center mb-3">
-                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white">
+                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#8B5CF6] to-[#A78BFA] flex items-center justify-center text-white">
                        <Users className="w-5 h-5" />
                      </div>
                      <div className="ml-3">
                        <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                         Welcome to GATE CS Community!
+                         Welcome to Hackathon Community!
                        </h3>
                        <p className="text-gray-600 dark:text-gray-400 text-sm">
-                         Connect, collaborate, and excel together in your GATE preparation.
+                         Connect, collaborate, and excel together in your Hackathonpreparation.
                        </p>
                      </div>
                    </div>
@@ -542,19 +585,19 @@ const CommunitySection = forwardRef((props, ref) => {
                            <span className="ml-2 text-xs text-gray-500 dark:text-gray-400">{message.time}</span>
                            
                            {message.user.role === "moderator" && (
-                             <span className="ml-2 px-1.5 py-0.5 rounded-sm text-[10px] font-medium bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400">
+                             <span className="ml-2 px-1.5 py-0.5 rounded-sm text-[10px] font-medium bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 text-[#8B5CF6] dark:text-[#A78BFA]">
                                MOD
                              </span>
                            )}
                            
                            {message.user.role === "mentor" && (
-                             <span className="ml-2 px-1.5 py-0.5 rounded-sm text-[10px] font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400">
+                             <span className="ml-2 px-1.5 py-0.5 rounded-sm text-[10px] font-medium bg-[#A78BFA]/10 dark:bg-[#A78BFA]/20 text-[#A78BFA] dark:text-[#8B5CF6]">
                                MENTOR
                              </span>
                            )}
 
                            {message.user.rank && message.user.rank !== "Preparing" && (
-                             <span className="ml-2 px-1.5 py-0.5 rounded-sm text-[10px] font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
+                             <span className="ml-2 px-1.5 py-0.5 rounded-sm text-[10px] font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-400">
                                {message.user.rank}
                              </span>
                            )}
@@ -595,7 +638,7 @@ const CommunitySection = forwardRef((props, ref) => {
                          className="w-full h-full object-cover"
                        />
                      </div>
-                     <span className="text-green-600 dark:text-green-400 mr-2 font-medium">{members[1].name}</span>
+                     <span className="text-[#8B5CF6] dark:text-[#A78BFA] mr-2 font-medium">{members[1].name}</span>
                      is typing
                      <span className="flex ml-1">
                        <span className="w-1 h-1 bg-gray-500 dark:bg-gray-400 rounded-full animate-bounce mx-0.5"></span>
@@ -612,14 +655,14 @@ const CommunitySection = forwardRef((props, ref) => {
                    <input
                      type="text"
                      placeholder={`Message #${channels.find(ch => ch.id === activeChannel)?.name.toLowerCase().replace(' ', '-')}`}
-                     className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 pr-20 text-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+                     className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 pr-20 text-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:border-[#8B5CF6]"
                    />
                    
                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center gap-2 text-gray-500 dark:text-gray-400">
                      <button className="cursor-pointer hover:text-gray-700 dark:hover:text-gray-300">
                        <Smile className="w-5 h-5" />
                      </button>
-                     <button className="cursor-pointer hover:text-gray-700 dark:hover:text-gray-300">
+                     <button className="cursor-pointer hover:text-[#8B5CF6] dark:hover:text-[#A78BFA]">
                        <Send className="w-5 h-5" />
                      </button>
                    </div>
@@ -637,7 +680,7 @@ const CommunitySection = forwardRef((props, ref) => {
              Why Join Our Community?
            </h3>
            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-             Experience collaborative learning with features designed to enhance your GATE preparation journey.
+             Experience collaborative learning with features designed to enhance your Hackathonpreparation journey.
            </p>
          </div>
          
@@ -658,13 +701,13 @@ const CommunitySection = forwardRef((props, ref) => {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.6, delay: idx * 0.1 }}
-               className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 group hover:shadow-xl transition-all duration-300"
+               className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 group hover:shadow-xl hover:shadow-[#8B5CF6]/10 hover:border-[#8B5CF6]/30 transition-all duration-300"
              >
-               <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white mb-4 group-hover:shadow-lg transition-all duration-300`}>
+               <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white mb-4 group-hover:shadow-lg group-hover:shadow-[#8B5CF6]/20 transition-all duration-300`}>
                  <feature.icon className="w-7 h-7" />
                </div>
                
-               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors">
                  {feature.title}
                </h3>
                
@@ -678,7 +721,7 @@ const CommunitySection = forwardRef((props, ref) => {
        
       
      </div>
-
+ 
      {/* Animation styles */}
      <style jsx>{`
        .animation-delay-200 {
@@ -690,6 +733,6 @@ const CommunitySection = forwardRef((props, ref) => {
      `}</style>
    </section>
  );
-});
-
-export default CommunitySection;
+ });
+ 
+ export default CommunitySection;

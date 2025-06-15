@@ -7,15 +7,16 @@ import {
   Twitter,
   Instagram,
   Send,
-  BookOpen,
+  Code,
   Target,
   Users,
   Calendar,
   Github,
   Globe,
   TrendingUp,
-  FileText,
+  Lightbulb,
   ArrowRight,
+  Zap,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -38,44 +39,44 @@ const Footer = () => {
       toast.error("Please enter a valid email address");
       return;
     }
-    toast.success("Thanks for subscribing to GATE updates!");
+    toast.success("Thanks for subscribing to Hackathon updates!");
     setEmail("");
   };
 
   const footerLinks = {
-    Resources: [
+    "Dev Resources": [
       {
-        name: "Study Materials",
-        href: "/materials",
-        icon: <BookOpen className="w-4 h-4" />,
+        name: "Code Templates",
+        href: "/templates",
+        icon: <Code className="w-4 h-4" />,
       },
       {
-        name: "Test Series",
-        href: "/tests",
-        icon: <Target className="w-4 h-4" />,
+        name: "API Collections",
+        href: "/apis",
+        icon: <Zap className="w-4 h-4" />,
       },
       {
-        name: "Progress Tracker",
+        name: "Project Tracker",
         href: "/progress",
         icon: <TrendingUp className="w-4 h-4" />,
       },
       {
-        name: "Study Planner",
+        name: "Hackathon Planner",
         href: "/planner",
         icon: <Calendar className="w-4 h-4" />,
       },
     ],
     Community: [
-      { name: "Discussion Forum", href: "/community" },
-      { name: "Success Stories", href: "/success-stories" },
-      { name: "Study Groups", href: "/study-groups" },
-      { name: "Mentor Connect", href: "/mentors" },
+      { name: "Developer Forum", href: "/community" },
+      { name: "Winner Stories", href: "/success-stories" },
+      { name: "Team Formation", href: "/teams" },
+      { name: "Mentor Network", href: "/mentors" },
     ],
-    Information: [
-      { name: "GATE 2026 Updates", href: "/gate-2026" },
-      { name: "Exam Pattern", href: "/exam-pattern" },
-      { name: "Syllabus", href: "/syllabus" },
-      { name: "Important Dates", href: "/dates" },
+    Hackathons: [
+      { name: "Upcoming Events", href: "/hackathons" },
+      { name: "Event Guidelines", href: "/guidelines" },
+      { name: "Judging Criteria", href: "/criteria" },
+      { name: "Prize Structure", href: "/prizes" },
     ],
   };
 
@@ -88,10 +89,7 @@ const Footer = () => {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]"
-          
-        ></div>
+        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]"></div>
       </div>
 
       {/* Gradient overlay */}
@@ -121,11 +119,11 @@ const Footer = () => {
           }}
           className="w-full h-full relative"
         >
-            <img
-              src="https://i.ibb.co/4Z2VV9Zp/image.png"
-              alt="Floating Astronaut"
-              className="w-full h-full object-contain p-4"
-            />
+          <img
+            src="https://i.ibb.co/4Z2VV9Zp/image.png"
+            alt="Floating Developer"
+            className="w-full h-full object-contain p-4"
+          />
           
           <motion.div
             className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 h-6 bg-black/20 dark:bg-black/30 rounded-full blur-md"
@@ -158,8 +156,8 @@ const Footer = () => {
                 LLEGPT
                 <div className="flex items-center ml-2">
                   <span className="text-sm font-medium text-gray-400 dark:text-gray-500">/</span>
-                  <span className="text-sm font-semibold bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent px-1">
-                    GATE
+                  <span className="text-sm font-semibold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent px-1">
+                    HACK
                   </span>
                 </div>
               </span>
@@ -167,54 +165,51 @@ const Footer = () => {
 
             <div className="space-y-6">
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-                Your comprehensive platform for GATE Computer Science & Data
-                Science preparation. Master concepts, track progress, and
-                achieve your dream score with our expertly crafted resources and
-                community support.
+                Comprehensive collection of development resources, tools, and learning materials to help you excel in hackathons and build innovative projects.
               </p>
 
               <div className="flex gap-4">
                 <SocialLink
-                  href="https://www.github.com/gate-cs"
+                  href="https://www.github.com/hackathon-platform"
                   icon={<Github />}
                   label="GitHub"
                   className="bg-gray-900 text-white hover:bg-gray-700"
                 />
                 <SocialLink
-                  href="https://www.linkedin.com/company/gate-cs"
+                  href="https://www.linkedin.com/company/hackathon-platform"
                   icon={<Linkedin />}
                   label="LinkedIn"
                   className="bg-[#0077B5] text-white hover:bg-blue-700"
                 />
                 <SocialLink
-                  href="https://twitter.com/gatecs"
+                  href="https://twitter.com/hackathonplatform"
                   icon={<Twitter />}
                   label="Twitter"
                   className="bg-[#1DA1F2] text-white hover:bg-blue-500"
                 />
                 <SocialLink
-                  href="https://www.instagram.com/gatecs"
+                  href="https://www.instagram.com/hackathonplatform"
                   icon={<Instagram />}
                   label="Instagram"
                   className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FFDC80] text-white"
                 />
                 <SocialLink
-                  href="https://gatecs.com"
+                  href="https://hackathonplatform.com"
                   icon={<Globe />}
                   label="Website"
-                  className="bg-gradient-to-r from-green-600 to-emerald-500 text-white"
+                  className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white"
                 />
               </div>
             </div>
 
             {/* Newsletter */}
             <div className="rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-xl dark:shadow-gray-900/20 backdrop-blur-xl border border-gray-100 dark:border-gray-700/50">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                Stay Updated with GATE 2026
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2 flex items-center">
+                <Lightbulb className="w-5 h-5 mr-2 text-[#8B5CF6]" />
+                Stay Updated with Hackathon Events
               </h3>
               <p className="text-slate-500 dark:text-slate-400 mb-4 text-sm">
-                Get the latest exam updates, study materials, and preparation
-                tips delivered to your inbox.
+                Get the latest hackathon announcements, developer resources, and winning project insights delivered to your inbox.
               </p>
               <form onSubmit={handleSubscribe} className="space-y-3">
                 <div className="relative">
@@ -225,7 +220,7 @@ const Footer = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 
                     bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm text-slate-900 dark:text-white
-                    focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400 outline-none
+                    focus:ring-2 focus:ring-[#8B5CF6] dark:focus:ring-[#A78BFA] outline-none
                     placeholder-slate-500 dark:placeholder-slate-400 transition-all"
                     required
                   />
@@ -235,10 +230,10 @@ const Footer = () => {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-4 py-3 rounded-xl bg-gradient-to-r from-green-600 to-emerald-500
-                  hover:from-green-700 hover:to-emerald-600
-                  dark:from-green-500 dark:to-emerald-500 dark:hover:from-green-600 dark:hover:to-emerald-600 
-                  text-white font-medium transition-all shadow-lg shadow-green-500/20 dark:shadow-green-500/10 
+                  className="w-full px-4 py-3 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA]
+                  hover:from-[#7C3AED] hover:to-[#8B5CF6]
+                  dark:from-[#8B5CF6] dark:to-[#A78BFA] dark:hover:from-[#7C3AED] dark:hover:to-[#8B5CF6] 
+                  text-white font-medium transition-all shadow-lg shadow-[#8B5CF6]/20 dark:shadow-[#8B5CF6]/10 
                   flex items-center justify-center gap-2"
                 >
                   Subscribe to Updates
@@ -256,7 +251,7 @@ const Footer = () => {
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6 relative inline-flex items-center">
                     {category}
                     <motion.span
-                      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-400 dark:to-emerald-400 rounded-full"
+                      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] dark:from-[#A78BFA] dark:to-[#8B5CF6] rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
                       transition={{ duration: 0.8, delay: 0.2 }}
@@ -278,12 +273,12 @@ const Footer = () => {
                         <Link
                           to={link.href}
                           className="group flex items-center text-slate-600 dark:text-slate-300 
-                          hover:text-green-600 dark:hover:text-green-400 transition-all"
+                          hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] transition-all"
                         >
                           {link.icon && (
                             <span
                               className="mr-3 text-slate-400 dark:text-slate-500 
-                              group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors"
+                              group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors"
                             >
                               {link.icon}
                             </span>
@@ -294,7 +289,7 @@ const Footer = () => {
                               className="opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-0"
                               transition={{ duration: 0.3 }}
                             >
-                              <ArrowRight className="w-3 h-3 text-green-500" />
+                              <ArrowRight className="w-3 h-3 text-[#8B5CF6]" />
                             </motion.span>
                           </span>
                         </Link>
@@ -311,25 +306,25 @@ const Footer = () => {
         <div className="border-t border-gray-200 dark:border-gray-700/50 pt-10 mt-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-slate-500 dark:text-slate-400">
-              &copy; {currentDate.getFullYear()} GATE CS Preparation Platform.
+              &copy; {currentDate.getFullYear()} Hackathon Platform by ColleGPT.
               All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
               <Link
                 to="/privacy"
-                className="hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                className="hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/terms"
-                className="hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                className="hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
                 to="/contact"
-                className="hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                className="hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] transition-colors"
               >
                 Contact Us
               </Link>

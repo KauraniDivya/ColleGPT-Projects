@@ -14,6 +14,9 @@ import {
   Users,
   Zap,
   Brain,
+  Code,
+  Smartphone,
+  Database,
 } from "lucide-react";
 
 const PlannerSection = forwardRef((props, ref) => {
@@ -57,88 +60,88 @@ const PlannerSection = forwardRef((props, ref) => {
 
   // Planner tabs
   const plannerTabs = [
-    { id: "calendar", name: "Study Calendar", icon: Calendar },
-    { id: "progress", name: "Progress Tracker", icon: TrendingUp },
-    { id: "goals", name: "Goal Setting", icon: Target },
-    { id: "analytics", name: "Analytics", icon: BarChart3 },
+    { id: "calendar", name: "Project Calendar", icon: Calendar },
+    { id: "progress", name: "Skills Tracker", icon: TrendingUp },
+    { id: "goals", name: "Hackathon Goals", icon: Target },
+    { id: "analytics", name: "Performance", icon: BarChart3 },
   ];
 
-  // Study schedule data
-  const studySchedule = [
+  // Project schedule data for hackathons
+  const projectSchedule = [
     {
-      time: "06:00 - 08:00",
-      subject: "Data Structures",
-      topic: "Trees and Graphs",
+      time: "Day 1: 09:00 - 12:00",
+      activity: "Ideation & Planning",
+      task: "Brainstorm ideas and create project roadmap",
       status: "completed",
-      difficulty: "medium"
+      priority: "high"
     },
     {
-      time: "08:30 - 10:30",
-      subject: "Algorithms",
-      topic: "Dynamic Programming",
+      time: "Day 1: 13:00 - 18:00", 
+      activity: "Setup & Architecture",
+      task: "Setup development environment and design system architecture",
       status: "in-progress",
-      difficulty: "hard"
+      priority: "high"
     },
     {
-      time: "11:00 - 12:30",
-      subject: "Operating Systems",
-      topic: "Process Management",
+      time: "Day 2: 09:00 - 15:00",
+      activity: "Core Development",
+      task: "Implement main features and functionality",
       status: "upcoming",
-      difficulty: "medium"
+      priority: "high"
     },
     {
-      time: "14:00 - 16:00",
-      subject: "Computer Networks",
-      topic: "TCP/IP Protocol",
+      time: "Day 2: 16:00 - 20:00",
+      activity: "Testing & Polish",
+      task: "Bug fixes, testing, and UI improvements", 
       status: "upcoming",
-      difficulty: "easy"
+      priority: "medium"
     },
   ];
 
-  // Progress data
-  const progressData = [
-    { subject: "Data Structures", completed: 85, total: 100, color: "bg-green-500" },
-    { subject: "Algorithms", completed: 72, total: 100, color: "bg-blue-500" },
-    { subject: "Operating Systems", completed: 68, total: 100, color: "bg-purple-500" },
-    { subject: "Computer Networks", completed: 54, total: 100, color: "bg-orange-500" },
-    { subject: "Database Systems", completed: 61, total: 100, color: "bg-pink-500" },
-    { subject: "Theory of Computation", completed: 45, total: 100, color: "bg-indigo-500" },
+  // Progress data for hackathon skills
+  const skillProgress = [
+    { skill: "Frontend Development", completed: 85, total: 100, color: "bg-green-500" },
+    { skill: "Backend APIs", completed: 72, total: 100, color: "bg-blue-500" },
+    { skill: "Database Design", completed: 68, total: 100, color: "bg-purple-500" },
+    { skill: "UI/UX Design", completed: 54, total: 100, color: "bg-orange-500" },
+    { skill: "DevOps & Deployment", completed: 61, total: 100, color: "bg-pink-500" },
+    { skill: "AI/ML Integration", completed: 45, total: 100, color: "bg-indigo-500" },
   ];
 
-  // Weekly study stats
+  // Weekly development stats
   const weeklyStats = [
-    { day: "Mon", hours: 8, target: 8 },
-    { day: "Tue", hours: 6, target: 8 },
+    { day: "Mon", hours: 6, target: 8 },
+    { day: "Tue", hours: 7, target: 8 },
     { day: "Wed", hours: 9, target: 8 },
-    { day: "Thu", hours: 7, target: 8 },
-    { day: "Fri", hours: 8, target: 8 },
-    { day: "Sat", hours: 10, target: 10 },
-    { day: "Sun", hours: 5, target: 6 },
+    { day: "Thu", hours: 8, target: 8 },
+    { day: "Fri", hours: 10, target: 8 },
+    { day: "Sat", hours: 12, target: 10 },
+    { day: "Sun", hours: 8, target: 6 },
   ];
 
-  // Goals data
-  const goals = [
+  // Hackathon goals
+  const hackathonGoals = [
     {
-      title: "Complete Data Structures",
-      deadline: "Feb 15, 2026",
-      progress: 85,
+      title: "Complete AI Project",
+      deadline: "July 20, 2025",
+      progress: 65,
       priority: "high",
       status: "on-track"
     },
     {
-      title: "Solve 500 PYQ Questions",
-      deadline: "Mar 1, 2026",
-      progress: 320,
-      total: 500,
-      priority: "high",
-      status: "on-track"
-    },
-    {
-      title: "Take 10 Mock Tests",
-      deadline: "Feb 28, 2026",
-      progress: 6,
-      total: 10,
+      title: "Learn React Native",
+      deadline: "August 1, 2025", 
+      progress: 40,
+      total: 100,
       priority: "medium",
+      status: "on-track"
+    },
+    {
+      title: "Participate in 5 Hackathons",
+      deadline: "Dec 31, 2025",
+      progress: 2,
+      total: 5,
+      priority: "high",
       status: "behind"
     },
   ];
@@ -172,19 +175,19 @@ const PlannerSection = forwardRef((props, ref) => {
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Today's Schedule */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-slate-700/50">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center">
-                  <Clock className="w-5 h-5 mr-2 text-green-600" />
-                  Today's Schedule
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                  <Clock className="w-5 h-5 mr-2 text-[#8B5CF6]" />
+                  Project Timeline
                 </h3>
                 <div className="space-y-4">
-                  {studySchedule.map((item, idx) => (
+                  {projectSchedule.map((item, idx) => (
                     <div key={idx} className="flex items-start space-x-3">
                       <div className="flex-shrink-0">
                         {item.status === "completed" ? (
-                          <CheckCircle className="w-5 h-5 text-green-500" />
+                          <CheckCircle className="w-5 h-5 text-[#8B5CF6]" />
                         ) : item.status === "in-progress" ? (
-                          <Clock className="w-5 h-5 text-blue-500" />
+                          <Clock className="w-5 h-5 text-[#A78BFA]" />
                         ) : (
                           <AlertCircle className="w-5 h-5 text-gray-400" />
                         )}
@@ -192,24 +195,24 @@ const PlannerSection = forwardRef((props, ref) => {
                       <div className="flex-1">
                         <div className="flex justify-between items-start">
                           <div>
-                            <p className="font-medium text-slate-900 dark:text-white">
-                              {item.subject}
+                            <p className="font-medium text-gray-900 dark:text-white">
+                              {item.activity}
                             </p>
-                            <p className="text-sm text-slate-600 dark:text-slate-400">
-                              {item.topic}
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {item.task}
                             </p>
                           </div>
-                          <span className="text-xs text-slate-500 dark:text-slate-400">
+                          <span className="text-xs text-gray-500 dark:text-gray-400">
                             {item.time}
                           </span>
                         </div>
                         <div className="flex items-center mt-2">
                           <span className={`px-2 py-1 rounded-full text-xs ${
-                            item.difficulty === "easy" ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300" :
-                            item.difficulty === "medium" ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300" :
-                            "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300"
+                            item.priority === "high" ? "bg-[#8B5CF6]/10 text-[#8B5CF6]" :
+                            item.priority === "medium" ? "bg-[#A78BFA]/10 text-[#A78BFA]" :
+                            "bg-[#8B5CF6]/20 text-[#8B5CF6]"
                           }`}>
-                            {item.difficulty}
+                            {item.priority} priority
                           </span>
                         </div>
                       </div>
@@ -219,25 +222,25 @@ const PlannerSection = forwardRef((props, ref) => {
               </div>
 
               {/* Mini Calendar */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-slate-700/50">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center">
-                  <Calendar className="w-5 h-5 mr-2 text-green-600" />
-                  January 2026
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                  <Calendar className="w-5 h-5 mr-2 text-[#8B5CF6]" />
+                  June 2025
                 </h3>
                 
                 {/* Calendar Grid */}
                 <div className="grid grid-cols-7 gap-1 text-center">
                   {["S", "M", "T", "W", "T", "F", "S"].map((day, idx) => (
-                    <div key={idx} className="text-xs font-medium text-slate-500 dark:text-slate-400 py-2">
+                    <div key={idx} className="text-xs font-medium text-gray-500 dark:text-gray-400 py-2">
                       {day}
                     </div>
                   ))}
                   
                   {Array.from({ length: 35 }, (_, i) => {
-                    const day = i - 2; // Start calendar layout
-                    const isCurrentMonth = day > 0 && day <= 31;
+                    const day = i + 1; // Start calendar layout
+                    const isCurrentMonth = day > 0 && day <= 30;
                     const isToday = day === 15;
-                    const hasStudy = [5, 8, 12, 15, 19, 22, 26, 29].includes(day);
+                    const hasHackathon = [7, 14, 21, 28].includes(day);
                     
                     return (
                       <div
@@ -245,14 +248,14 @@ const PlannerSection = forwardRef((props, ref) => {
                         className={`text-xs rounded-lg aspect-square flex items-center justify-center cursor-pointer transition-colors ${
                           isCurrentMonth
                             ? isToday
-                              ? "bg-green-600 text-white font-bold"
-                              : hasStudy
-                              ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 font-medium"
-                              : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
-                            : "text-slate-400 dark:text-slate-600"
+                              ? "bg-[#8B5CF6] text-white font-bold"
+                              : hasHackathon
+                              ? "bg-[#8B5CF6]/10 text-[#8B5CF6] font-medium"
+                              : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                            : "text-gray-300 dark:text-gray-600"
                         }`}
                       >
-                        {isCurrentMonth ? day : day <= 0 ? 31 + day : day - 31}
+                        {day > 0 && day <= 30 ? day : ""}
                       </div>
                     );
                   })}
@@ -266,28 +269,27 @@ const PlannerSection = forwardRef((props, ref) => {
         return (
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Subject Progress */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-slate-700/50">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
-                  Subject-wise Progress
+              {/* Skills Progress */}
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                  <TrendingUp className="w-5 h-5 mr-2 text-[#8B5CF6]" />
+                  Skills Progress
                 </h3>
                 <div className="space-y-4">
-                  {progressData.map((item, idx) => (
+                  {skillProgress.map((item, idx) => (
                     <div key={idx}>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                          {item.subject}
+                        <span className="text-sm font-medium text-gray-900 dark:text-white">
+                          {item.skill}
                         </span>
-                        <span className="text-sm text-slate-500 dark:text-slate-400">
+                        <span className="text-sm text-gray-500 dark:text-gray-400">
                           {item.completed}%
                         </span>
                       </div>
-                      <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                        <motion.div
-                          className={`h-2 rounded-full ${item.color}`}
-                          initial={{ width: 0 }}
-                          animate={{ width: `${item.completed}%` }}
-                          transition={{ duration: 1, delay: idx * 0.1 }}
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div
+                          className="bg-[#8B5CF6] h-2 rounded-full"
+                          style={{ width: `${item.completed}%` }}
                         />
                       </div>
                     </div>
@@ -295,26 +297,25 @@ const PlannerSection = forwardRef((props, ref) => {
                 </div>
               </div>
 
-              {/* Weekly Study Hours */}
-              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-slate-700/50">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
-                  Weekly Study Hours
+              {/* Weekly Development Hours */}
+              <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                  <BarChart3 className="w-5 h-5 mr-2 text-[#8B5CF6]" />
+                  Weekly Development Hours
                 </h3>
                 <div className="flex items-end justify-between h-32">
                   {weeklyStats.map((stat, idx) => (
                     <div key={idx} className="flex flex-col items-center">
-                      <div className="relative w-6 h-24 bg-slate-200 dark:bg-slate-700 rounded-full mb-2">
-                        <motion.div
-                          className="absolute bottom-0 left-0 right-0 bg-green-500 rounded-full"
-                          initial={{ height: 0 }}
-                          animate={{ height: `${(stat.hours / stat.target) * 100}%` }}
-                          transition={{ duration: 0.8, delay: idx * 0.1 }}
+                      <div className="relative w-6 h-24 bg-gray-100 dark:bg-gray-700 rounded-full mb-2">
+                        <div
+                          className="absolute bottom-0 left-0 right-0 bg-[#8B5CF6] rounded-full"
+                          style={{ height: `${(stat.hours / stat.target) * 100}%` }}
                         />
                       </div>
-                      <span className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                      <span className="text-xs text-gray-500 dark:text-gray-400 mb-1">
                         {stat.day}
                       </span>
-                      <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+                      <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                         {stat.hours}h
                       </span>
                     </div>
@@ -328,275 +329,305 @@ const PlannerSection = forwardRef((props, ref) => {
       case "goals":
         return (
           <div className="space-y-6">
-            {goals.map((goal, idx) => (
-              <div key={idx} className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-slate-700/50">
+            {hackathonGoals.map((goal, idx) => (
+              <div key={idx} className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       {goal.title}
                     </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       Deadline: {goal.deadline}
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className={`px-2 py-1 rounded-full text-xs ${
-                      goal.priority === "high" ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300" :
-                      "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300"
-                    }`}>
-                      {goal.priority} priority
-                    </span>
-                    <span className={`px-2 py-1 rounded-full text-xs ${
-                      goal.status === "on-track" ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300" :
-                      "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300"
-                    }`}>
-                      {goal.status}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="mb-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm text-slate-600 dark:text-slate-400">Progress</span>
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                      {goal.total ? `${goal.progress}/${goal.total}` : `${goal.progress}%`}
-                    </span>
-                  </div>
-                  <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                    <motion.div
-                      className="h-2 rounded-full bg-green-500"
-                      initial={{ width: 0 }}
-                      animate={{ 
-                        width: goal.total ? `${(goal.progress / goal.total) * 100}%` : `${goal.progress}%` 
-                      }}
-                      transition={{ duration: 1, delay: idx * 0.2 }}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        );
+                  <span className={`px-2 py-1 rounded-full text-xs ${
+                     goal.priority === "high" ? "bg-[#8B5CF6]/10 text-[#8B5CF6]" :
+                     "bg-[#A78BFA]/10 text-[#A78BFA]"
+                   }`}>
+                     {goal.priority} priority
+                   </span>
+                   <span className={`px-2 py-1 rounded-full text-xs text-white ${
+                     goal.status === "on-track" ? "bg-[#8B5CF6]" : "bg-[#A78BFA]"
+                   }`}>
+                     {goal.status}
+                   </span>
+                 </div>
+               </div>
+               
+               <div className="mb-4">
+                 <div className="flex justify-between items-center mb-2">
+                   <span className="text-sm text-gray-600 dark:text-gray-400">Progress</span>
+                   <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                     {goal.total ? `${goal.progress}/${goal.total}` : `${goal.progress}%`}
+                   </span>
+                 </div>
+                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                   <div
+                     className={`h-2 rounded-full ${
+                       goal.status === "on-track" ? "bg-[#8B5CF6]" : "bg-[#A78BFA]"
+                     }`}
+                     style={{ width: `${(goal.progress / (goal.total || 100)) * 100}%` }}
+                   />
+                 </div>
+               </div>
+             </div>
+           ))}
+           
+           {/* Add New Goal Form */}
+           <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+               <Target className="w-5 h-5 mr-2 text-[#8B5CF6]" />
+               Set New Hackathon Goal
+             </h3>
+             <form className="space-y-4">
+               <div>
+                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                   Goal Title
+                 </label>
+                 <input
+                   type="text"
+                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#8B5CF6] focus:border-transparent"
+                   placeholder="e.g., Build a Mobile App"
+                 />
+               </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                 <div>
+                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                     Deadline
+                   </label>
+                   <input
+                     type="date"
+                     className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#8B5CF6] focus:border-transparent"
+                   />
+                 </div>
+                 <div>
+                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                     Priority
+                   </label>
+                   <select className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#8B5CF6] focus:border-transparent">
+                     <option value="high">High Priority</option>
+                     <option value="medium">Medium Priority</option>
+                     <option value="low">Low Priority</option>
+                   </select>
+                 </div>
+               </div>
+               <button
+                 type="submit"
+                 className="w-full px-4 py-2 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#A78BFA] transition-colors flex items-center justify-center"
+               >
+                 <Target className="w-4 h-4 mr-2" />
+                 Add Goal
+               </button>
+             </form>
+           </div>
+         </div>
+       );
 
-      case "analytics":
-        return (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Analytics Cards */}
-              {[
-                { title: "Average Study Time", value: "7.2 hrs/day", icon: Clock, color: "text-blue-600" },
-                { title: "Topics Completed", value: "147/200", icon: BookOpen, color: "text-green-600" },
-                { title: "Mock Test Average", value: "78.5%", icon: Award, color: "text-purple-600" },
-              ].map((stat, idx) => (
-                <div key={idx} className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-white/20 dark:border-slate-700/50 text-center">
-                  <div className={`w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center mx-auto mb-4 ${stat.color}`}>
-                    <stat.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
-                    {stat.value}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    {stat.title}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
+     case "analytics":
+       return (
+         <div className="space-y-6">
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+             {/* Performance Analytics Cards */}
+             {[
+               { 
+                 title: "Average Dev Time", 
+                 value: "8.2 hrs/day", 
+                 icon: Clock, 
+                 color: "text-blue-600",
+                 trend: "+12% this week"
+               },
+               { 
+                 title: "Projects Completed", 
+                 value: "7/10", 
+                 icon: CheckCircle, 
+                 color: "text-green-600",
+                 trend: "70% completion rate"
+               },
+               { 
+                 title: "Hackathon Wins", 
+                 value: "3", 
+                 icon: Award, 
+                 color: "text-purple-600",
+                 trend: "Last win: AI Challenge"
+               },
+             ].map((stat, idx) => (
+               <div key={idx} className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all text-center">
+                 <div className={`w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center mx-auto mb-4 ${stat.color}`}>
+                   <stat.icon className="w-6 h-6" />
+                 </div>
+                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                   {stat.value}
+                 </h3>
+                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                   {stat.title}
+                 </p>
+                 <p className="text-xs text-[#8B5CF6] dark:text-[#A78BFA]">
+                   {stat.trend}
+                 </p>
+               </div>
+             ))}
+           </div>
 
-      default:
-        return null;
-    }
-  };
+           {/* Technology Usage Chart */}
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+             <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                 <Code className="w-5 h-5 mr-2 text-[#8B5CF6]" />
+                 Technology Usage
+               </h3>
+               <div className="space-y-3">
+                 {[
+                   { tech: "React.js", usage: 85, icon: Code },
+                   { tech: "Node.js", usage: 70, icon: Database },
+                   { tech: "Python", usage: 60, icon: Brain },
+                   { tech: "React Native", usage: 45, icon: Smartphone },
+                 ].map((item, idx) => (
+                   <div key={idx} className="flex items-center justify-between">
+                     <div className="flex items-center">
+                       <item.icon className="w-4 h-4 text-[#8B5CF6] mr-2" />
+                       <span className="text-sm font-medium text-gray-900 dark:text-white">
+                         {item.tech}
+                       </span>
+                     </div>
+                     <div className="flex items-center">
+                       <div className="w-20 bg-gray-200 dark:bg-gray-700 rounded-full h-2 mr-2">
+                         <div
+                           className="bg-[#8B5CF6] h-2 rounded-full"
+                           style={{ width: `${item.usage}%` }}
+                         />
+                       </div>
+                       <span className="text-xs text-gray-500 dark:text-gray-400">
+                         {item.usage}%
+                       </span>
+                     </div>
+                   </div>
+                 ))}
+               </div>
+             </div>
 
-  return (
-    <section
-      ref={(node) => {
-        if (typeof ref === "function") {
-          ref(node);
-        } else if (ref) {
-          ref.current = node;
-        }
-        sectionRef.current = node;
-      }}
-      id="planner"
-      className="relative min-h-screen py-20 bg-white dark:bg-[#0A0A0A] overflow-hidden"
-      onMouseMove={handleMouseMove}
-    >
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-[600px] h-[400px] bg-gradient-to-b from-green-500/5 to-transparent rounded-full filter blur-[80px]"></div>
-        <div className="absolute bottom-0 right-0 w-[400px] h-[500px] bg-gradient-to-tr from-emerald-500/5 to-transparent rounded-full filter blur-[60px]"></div>
-      </div>
+             {/* Recent Achievements */}
+             <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-[#8B5CF6] transition-all">
+               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                 <Award className="w-5 h-5 mr-2 text-[#8B5CF6]" />
+                 Recent Achievements
+               </h3>
+               <div className="space-y-3">
+                 {[
+                   { achievement: "Won AI Innovation Challenge", date: "June 10", badge: "🏆" },
+                   { achievement: "Completed React Certification", date: "June 5", badge: "🎓" },
+                   { achievement: "Built First Mobile App", date: "May 28", badge: "📱" },
+                   { achievement: "5-Day Coding Streak", date: "May 20", badge: "🔥" },
+                 ].map((item, idx) => (
+                   <div key={idx} className="flex items-center justify-between py-2">
+                     <div className="flex items-center">
+                       <span className="text-lg mr-3">{item.badge}</span>
+                       <div>
+                         <p className="text-sm font-medium text-gray-900 dark:text-white">
+                           {item.achievement}
+                         </p>
+                         <p className="text-xs text-gray-500 dark:text-gray-400">
+                           {item.date}
+                         </p>
+                       </div>
+                     </div>
+                   </div>
+                 ))}
+               </div>
+             </div>
+           </div>
+         </div>
+       );
 
-      {/* Dynamic cursor light effect */}
-      <div
-        className="absolute inset-0 -z-5 overflow-hidden"
-        style={{
-          background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(34,197,94,0.07), transparent 80%)`,
-        }}
-      />
+     default:
+       return null;
+   }
+ };
 
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col items-center mb-16 text-center"
-        >
-          <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm bg-white/10 dark:bg-slate-800/20 backdrop-blur-sm border border-white/10 dark:border-slate-700/20 mb-6">
-            <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-            <span className="bg-gradient-to-r from-slate-700 dark:from-slate-100 to-slate-500 dark:to-slate-300 bg-clip-text text-transparent font-medium">
-              Smart Study Planning
-            </span>
-          </span>
+ return (
+   <section
+     ref={(node) => {
+       if (typeof ref === "function") {
+         ref(node);
+       } else if (ref) {
+         ref.current = node;
+       }
+       sectionRef.current = node;
+     }}
+     id="planner"
+     className="relative min-h-screen py-20 bg-white dark:bg-[#0A0A0A] overflow-hidden"
+     onMouseMove={handleMouseMove}
+   >
+     {/* Background Elements */}
+     <div className="absolute inset-0 -z-10">
+       <div className="absolute top-0 left-0 w-[600px] h-[400px] bg-gradient-to-b from-[#8B5CF6]/5 to-transparent rounded-full filter blur-[80px]"></div>
+       <div className="absolute bottom-0 right-0 w-[400px] h-[500px] bg-gradient-to-tr from-[#A78BFA]/5 to-transparent rounded-full filter blur-[60px]"></div>
+     </div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 relative">
-            <span className="bg-gradient-to-r from-slate-900 dark:from-white to-slate-600 dark:to-slate-300 bg-clip-text text-transparent relative z-10">
-              Study
-            </span>
-            <span className="text-green-600 dark:text-green-400"> Planner</span>
-          </h2>
+     {/* Dynamic cursor light effect */}
+     <div
+       className="absolute inset-0 -z-5 overflow-hidden"
+       style={{
+         background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(139,92,246,0.07), transparent 80%)`,
+       }}
+     />
 
-          <motion.p
-            className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Organize your GATE preparation with AI-powered study plans, progress tracking, 
-            and personalized analytics to maximize your productivity and success.
-          </motion.p>
-        </motion.div>
+     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       {/* Section Header */}
+       <div className="text-center mb-16">
+         <motion.h2
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+         >
+           <span className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent">
+             Project Planner
+           </span>
+         </motion.h2>
+         <motion.p
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ delay: 0.1 }}
+           className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+         >
+           Plan your hackathon participation with our smart project planner
+         </motion.p>
+       </div>
 
-        {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-12">
-          {/* Left Side: Features & Benefits */}
-          <motion.div
-            className="w-full lg:w-2/5"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                Personalized
-                <span className="block text-green-600 dark:text-green-400">
-                  Study Experience
-                </span>
-              </h3>
-              <p className="text-lg text-slate-600 dark:text-slate-300">
-                Our AI-powered planner adapts to your learning pace, strengths, and weaknesses 
-                to create the most effective study schedule for your GATE preparation.
-              </p>
-            </motion.div>
+       {/* Planner Tabs */}
+       <div className="flex justify-center mb-12">
+         <div className="inline-flex rounded-lg bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm border border-gray-200 dark:border-slate-700 p-1">
+           {plannerTabs.map((tab) => (
+             <button
+               key={tab.id}
+               onClick={() => setActiveTab(tab.id)}
+               className={`px-6 py-2 rounded-md text-sm font-medium transition-all flex items-center ${
+                 activeTab === tab.id
+                   ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white"
+                   : "text-gray-600 dark:text-gray-300 hover:text-[#8B5CF6] dark:hover:text-[#8B5CF6]"
+               }`}
+             >
+               <tab.icon className="w-4 h-4 mr-2" />
+               {tab.name}
+             </button>
+           ))}
+         </div>
+       </div>
 
-            {/* Feature highlights */}
-            <motion.div variants={containerVariants} className="space-y-6">
-              {[
-                {
-                  icon: Brain,
-                  title: "AI-Powered Scheduling",
-                  description: "Smart algorithms create optimal study schedules based on your performance and preferences",
-                  color: "from-blue-500 to-cyan-400"
-                },
-                {
-                  icon: Target,
-                  title: "Goal-Oriented Planning",
-                  description: "Set and track specific goals with milestone-based progress monitoring",
-                  color: "from-green-500 to-emerald-400"
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Progress Analytics",
-                  description: "Detailed insights into your study patterns and performance trends",
-                  color: "from-purple-500 to-pink-500"
-                },
-                {
-                  icon: Zap,
-                  title: "Adaptive Learning",
-                  description: "Plans automatically adjust based on your progress and changing priorities",
-                  color: "from-orange-500 to-red-500"
-                },
-              ].map((feature, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  className="flex items-start space-x-4 p-4 rounded-xl bg-white/30 dark:bg-slate-800/30 backdrop-blur-sm border border-white/20 dark:border-slate-700/20 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all"
-                >
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center shadow-lg`}>
-                    <feature.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300">
-                      {feature.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA */}
-            <motion.div variants={itemVariants} className="mt-8">
-              <button className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-medium rounded-lg inline-flex items-center transition-all shadow-lg">
-                Create Your Study Plan
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Side: Interactive Planner Interface */}
-          <motion.div
-            className="w-full lg:w-3/5"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            {/* Planner Dashboard */}
-            <div className="bg-white/30 dark:bg-slate-900/30 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/30 dark:border-slate-700/30 shadow-xl">
-              {/* Tab Navigation */}
-              <div className="p-6 border-b border-slate-200/50 dark:border-slate-700/50 flex gap-2 overflow-x-auto">
-                {plannerTabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center whitespace-nowrap ${
-                      activeTab === tab.id
-                        ? "text-white"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50"
-                    }`}
-                    onClick={() => setActiveTab(tab.id)}
-                  >
-                    {activeTab === tab.id && (
-                      <motion.span
-                        className="absolute inset-0 rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 -z-10"
-                        layoutId="activeTabPlanner"
-                        transition={{ type: "spring", duration: 0.5 }}
-                      />
-                    )}
-                    <tab.icon className="w-4 h-4 mr-2" />
-                    {tab.name}
-                  </button>
-                ))}
-              </div>
-
-              {/* Tab Content */}
-              <div className="p-6 h-[500px] overflow-auto">
-                {renderTabContent()}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
+       {/* Tab Content */}
+       <motion.div
+         key={activeTab}
+         initial={{ opacity: 0, y: 20 }}
+         animate={{ opacity: 1, y: 0 }}
+         exit={{ opacity: 0, y: -20 }}
+         transition={{ duration: 0.3 }}
+         className="mt-8"
+       >
+         {renderTabContent()}
+       </motion.div>
+     </div>
+   </section>
+ );
 });
 
 export default PlannerSection;

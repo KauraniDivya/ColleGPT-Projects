@@ -15,6 +15,9 @@ import {
   ThumbsUp,
   Share2,
   Tag,
+  Code,
+  Trophy,
+  Users,
 } from "lucide-react";
 
 const BlogsSection = forwardRef((props, ref) => {
@@ -56,96 +59,116 @@ const BlogsSection = forwardRef((props, ref) => {
     };
   }, [ref]);
 
-  // Blog categories
+  // Blog categories - hackathon focused
   const blogCategories = [
     { id: "all", name: "All Posts", count: 45 },
-    { id: "preparation", name: "Preparation Tips", count: 18 },
-    { id: "technical", name: "Technical Concepts", count: 12 },
-    { id: "motivation", name: "Motivation", count: 8 },
-    { id: "updates", name: "GATE Updates", count: 7 },
+    { id: "strategy", name: "Hackathon Strategy", count: 18 },
+    { id: "technical", name: "Technical Guides", count: 12 },
+    { id: "teamwork", name: "Team Building", count: 8 },
+    { id: "trends", name: "Tech Trends", count: 7 },
   ];
 
-  // Blog posts data
+  // Blog posts data - hackathon focused
   const blogPosts = [
     {
       id: 1,
-      title: "Complete GATE 2026 Preparation Roadmap: Month-by-Month Guide",
-      excerpt: "A comprehensive month-by-month preparation strategy covering all subjects with realistic timelines and milestone targets for GATE CS & DA.",
-      content: "Preparing for GATE requires a systematic approach. This detailed roadmap breaks down the entire preparation journey into manageable monthly goals...",
+      title: "Complete Hackathon Preparation Guide: From Idea to Prototype",
+      excerpt: "A comprehensive guide covering ideation, team formation, technical execution, and presentation strategies for winning hackathons.",
+      content: "Hackathons are intense innovation marathons. This detailed guide breaks down every phase from brainstorming to final pitch...",
       author: {
-        name: "Dr. Priya Sharma",
-        avatar: "https://randomuser.me/api/portraits/women/45.jpg",
-        designation: "GATE Mentor & IIT Professor"
+        name: "Alex Rodriguez",
+        avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+        designation: "Senior Developer & Hackathon Mentor"
       },
       publishDate: "2025-01-10",
       readTime: "12 min read",
-      category: "preparation",
-      tags: ["roadmap", "strategy", "planning"],
-      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
+      category: "strategy",
+      tags: ["preparation", "strategy", "winning"],
+      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop",
       featured: true,
-      views: 15420,
-      likes: 892,
-      shares: 156
+      views: 25420,
+      likes: 1892,
+      shares: 456
     },
     {
       id: 2,
-      title: "Top 10 Mistakes to Avoid in GATE Preparation",
-      excerpt: "Learn from the common pitfalls that prevent students from achieving their target scores. Expert insights on what NOT to do during preparation.",
-      content: "Based on analyzing thousands of GATE attempts, we've identified the most common mistakes that cost students valuable marks...",
+      title: "Top 10 Mistakes That Kill Your Hackathon Chances",
+      excerpt: "Learn from common pitfalls that prevent teams from succeeding. Expert insights on what NOT to do during hackathons.",
+      content: "Based on judging hundreds of hackathons, we've identified the critical mistakes that cost teams their victory...",
       author: {
-        name: "Rahul Kumar",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-        designation: "GATE Topper (AIR 23)"
+        name: "Sarah Chen",
+        avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+        designation: "Hackathon Judge & Tech Lead"
       },
       publishDate: "2025-01-08",
       readTime: "8 min read",
-      category: "preparation",
-      tags: ["mistakes", "tips", "strategy"],
+      category: "strategy",
+      tags: ["mistakes", "tips", "judgment"],
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
       featured: false,
-      views: 12890,
-      likes: 675,
-      shares: 234
+      views: 18890,
+      likes: 1275,
+      shares: 334
     },
     {
       id: 3,
-      title: "Dynamic Programming Mastery: From Basics to GATE Level",
-      excerpt: "Master one of the most challenging topics in algorithms with step-by-step explanations, patterns, and GATE-specific problem-solving techniques.",
-      content: "Dynamic Programming often intimidates GATE aspirants, but with the right approach and understanding of patterns...",
+      title: "Building AI-Powered Apps in 48 Hours: A Technical Deep Dive",
+      excerpt: "Master rapid AI integration with practical frameworks, APIs, and deployment strategies perfect for hackathon timelines.",
+      content: "Time constraints in hackathons demand smart technical choices. Here's how to leverage AI effectively under pressure...",
       author: {
-        name: "Ananya Singh",
+        name: "Dr. Priya Sharma",
         avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-        designation: "Algorithm Expert & Mentor"
+        designation: "AI Researcher & Innovation Lead"
       },
       publishDate: "2025-01-05",
       readTime: "15 min read",
       category: "technical",
-      tags: ["algorithms", "dp", "coding"],
+      tags: ["AI", "development", "apis"],
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
       featured: false,
-      views: 9876,
-      likes: 543,
-      shares: 87
+      views: 16876,
+      likes: 1043,
+      shares: 287
     },
     {
       id: 4,
-      title: "How to Stay Motivated During Long GATE Preparation",
-      excerpt: "Psychological strategies and practical tips to maintain motivation, overcome burnout, and stay focused during the challenging preparation period.",
-      content: "GATE preparation is a marathon, not a sprint. Maintaining motivation over 12-18 months requires specific strategies...",
+      title: "The Psychology of Winning Hackathon Teams",
+      excerpt: "Understanding team dynamics, communication patterns, and psychological factors that separate winning teams from the rest.",
+      content: "Successful hackathons aren't just about coding. Team psychology, communication, and collaboration are equally crucial...",
       author: {
-        name: "Dr. Arjun Patel",
+        name: "Mike Johnson",
         avatar: "https://randomuser.me/api/portraits/men/55.jpg",
-        designation: "Educational Psychologist"
+        designation: "Team Building Expert"
       },
       publishDate: "2025-01-03",
       readTime: "10 min read",
-      category: "motivation",
-      tags: ["motivation", "psychology", "mindset"],
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop",
+      category: "teamwork",
+      tags: ["psychology", "teamwork", "collaboration"],
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop",
       featured: false,
-      views: 8234,
-      likes: 456,
-      shares: 123
+      views: 12234,
+      likes: 756,
+      shares: 193
+    },
+    {
+      id: 5,
+      title: "Web3 & Blockchain: The Future of Hackathon Innovation",
+      excerpt: "Explore how Web3 technologies are reshaping hackathons with decentralized solutions, smart contracts, and tokenomics.",
+      content: "The hackathon landscape is evolving with Web3. Learn about the latest trends and opportunities in blockchain hackathons...",
+      author: {
+        name: "James Kim",
+        avatar: "https://randomuser.me/api/portraits/men/42.jpg",
+        designation: "Blockchain Developer"
+      },
+      publishDate: "2025-01-01",
+      readTime: "11 min read",
+      category: "trends",
+      tags: ["web3", "blockchain", "innovation"],
+      image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2070&auto=format&fit=crop",
+      featured: false,
+      views: 14567,
+      likes: 892,
+      shares: 234
     },
    
   ];
@@ -215,17 +238,17 @@ const BlogsSection = forwardRef((props, ref) => {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 opacity-5 dark:opacity-10">
-          <div className="w-full h-full bg-[linear-gradient(transparent_39px,#22c55e_1px),linear-gradient(90deg,transparent_39px,#22c55e_1px)] bg-[length:40px_40px]"></div>
+          <div className="w-full h-full bg-[linear-gradient(transparent_39px,#8B5CF6_1px),linear-gradient(90deg,transparent_39px,#8B5CF6_1px)] bg-[length:40px_40px]"></div>
         </div>
-        <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-green-500/10 to-transparent blur-[80px]"></div>
-        <div className="absolute bottom-[10%] left-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-emerald-500/10 to-transparent blur-[100px]"></div>
+        <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#8B5CF6]/10 to-transparent blur-[80px]"></div>
+        <div className="absolute bottom-[10%] left-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#A78BFA]/10 to-transparent blur-[100px]"></div>
       </div>
 
       {/* Dynamic cursor light effect */}
       <div
         className="absolute inset-0 -z-5 overflow-hidden"
         style={{
-          background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(34,197,94,0.07), transparent 80%)`,
+          background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(139,92,246,0.07), transparent 80%)`,
         }}
       />
 
@@ -239,7 +262,7 @@ const BlogsSection = forwardRef((props, ref) => {
           className="flex flex-col items-center mb-16 text-center"
         >
           <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm bg-white/10 dark:bg-slate-800/20 backdrop-blur-sm border border-white/10 dark:border-slate-700/20 mb-6">
-            <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+            <span className="inline-block w-2 h-2 rounded-full bg-[#8B5CF6] mr-2 animate-pulse"></span>
             <span className="bg-gradient-to-r from-slate-700 dark:from-slate-100 to-slate-500 dark:to-slate-300 bg-clip-text text-transparent font-medium">
               Expert Insights & Tips
             </span>
@@ -249,7 +272,7 @@ const BlogsSection = forwardRef((props, ref) => {
             <span className="bg-gradient-to-r from-slate-900 dark:from-white to-slate-600 dark:to-slate-300 bg-clip-text text-transparent relative z-10">
               Blogs &
             </span>
-            <span className="text-green-600 dark:text-green-400"> Resources</span>
+            <span className="text-[#8B5CF6] dark:text-[#A78BFA]"> Resources</span>
           </h2>
 
           <motion.p
@@ -259,8 +282,8 @@ const BlogsSection = forwardRef((props, ref) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Stay updated with the latest preparation strategies, technical concepts, 
-            and motivational content from GATE experts and successful candidates.
+            Stay updated with the latest hackathon strategies, technical guides, 
+            and innovation insights from industry experts and successful hackers.
           </motion.p>
         </motion.div>
 
@@ -277,8 +300,8 @@ const BlogsSection = forwardRef((props, ref) => {
               key={category.id}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeCategory === category.id
-                  ? "bg-green-600 text-white shadow-lg"
-                  : "bg-white/70 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 border border-white/20 dark:border-slate-700/20"
+                  ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-lg"
+                  : "bg-white/70 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 border border-white/20 dark:border-slate-700/20 hover:border-[#8B5CF6]/30"
               }`}
               onClick={() => setActiveCategory(category.id)}
             >
@@ -303,12 +326,12 @@ const BlogsSection = forwardRef((props, ref) => {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 dark:border-slate-700/50 shadow-xl hover:shadow-2xl transition-all group">
+            <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 dark:border-slate-700/50 shadow-xl hover:shadow-2xl hover:border-[#8B5CF6]/30 transition-all group">
               <div className="flex flex-col lg:flex-row">
                 {/* Image */}
                 <div className="lg:w-1/2 relative overflow-hidden">
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full">
+                    <span className="px-3 py-1 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white text-xs font-medium rounded-full">
                       Featured Post
                     </span>
                   </div>
@@ -334,7 +357,7 @@ const BlogsSection = forwardRef((props, ref) => {
                       </span>
                     </div>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors">
                       {featuredPost.title}
                     </h3>
 
@@ -364,7 +387,7 @@ const BlogsSection = forwardRef((props, ref) => {
                       {featuredPost.tags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-md"
+                          className="px-2 py-1 bg-[#8B5CF6]/10 dark:bg-[#8B5CF6]/20 text-[#8B5CF6] dark:text-[#A78BFA] text-xs rounded-md"
                         >
                           #{tag}
                         </span>
@@ -391,7 +414,7 @@ const BlogsSection = forwardRef((props, ref) => {
                       </div>
                     </div>
 
-                    <button className="w-full px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center">
+                    <button className="w-full px-6 py-3 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] hover:from-[#7C3AED] hover:to-[#8B5CF6] text-white font-medium rounded-lg transition-all shadow-lg hover:shadow-[#8B5CF6]/25 flex items-center justify-center">
                       Read Full Article
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </button>
@@ -414,7 +437,7 @@ const BlogsSection = forwardRef((props, ref) => {
             <motion.article
               key={post.id}
               variants={itemVariants}
-              className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 dark:border-slate-700/50 shadow-lg hover:shadow-xl transition-all group"
+              className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 dark:border-slate-700/50 shadow-lg hover:shadow-xl hover:border-[#8B5CF6]/30 transition-all group"
             >
               {/* Image */}
               <div className="relative overflow-hidden">
@@ -425,10 +448,11 @@ const BlogsSection = forwardRef((props, ref) => {
                 />
                 <div className="absolute top-3 left-3">
                   <span className={`px-2 py-1 text-xs font-medium rounded-full ${
-                    post.category === "preparation" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300" :
-                    post.category === "technical" ? "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300" :
-                    post.category === "motivation" ? "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300" :
-                    "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300"
+                    post.category === "strategy" ? "bg-[#8B5CF6]/10 text-[#8B5CF6] dark:bg-[#8B5CF6]/20 dark:text-[#A78BFA]" :
+                    post.category === "technical" ? "bg-[#A78BFA]/10 text-[#A78BFA] dark:bg-[#A78BFA]/20 dark:text-[#8B5CF6]" :
+                    post.category === "teamwork" ? "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300" :
+                    post.category === "trends" ? "bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300" :
+                    "bg-[#8B5CF6]/10 text-[#8B5CF6] dark:bg-[#8B5CF6]/20 dark:text-[#A78BFA]"
                   }`}>
                     {blogCategories.find(cat => cat.id === post.category)?.name || "General"}
                   </span>
@@ -448,7 +472,7 @@ const BlogsSection = forwardRef((props, ref) => {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors line-clamp-2">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
@@ -488,7 +512,7 @@ const BlogsSection = forwardRef((props, ref) => {
                 </div>
 
                 {/* CTA */}
-                <button className="w-full px-4 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-green-50 dark:hover:bg-green-900/30 text-slate-700 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 font-medium rounded-lg transition-colors flex items-center justify-center text-sm">
+                <button className="w-full px-4 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-[#8B5CF6]/10 dark:hover:bg-[#8B5CF6]/20 text-slate-700 dark:text-slate-300 hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] font-medium rounded-lg transition-colors flex items-center justify-center text-sm">
                   Read More
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </button>
@@ -505,17 +529,17 @@ const BlogsSection = forwardRef((props, ref) => {
           transition={{ duration: 0.7 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white relative overflow-hidden mb-8">
+          <div className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] rounded-2xl p-8 text-white relative overflow-hidden mb-8">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-1/4 -translate-y-1/4"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full transform -translate-x-1/4 translate-y-1/4"></div>
             
             <div className="relative">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Never Miss an Update
+                Never Miss an Innovation
               </h3>
               <p className="text-white/80 max-w-2xl mx-auto mb-6">
-                Subscribe to our newsletter and get the latest GATE preparation tips, 
-                technical insights, and motivational content delivered to your inbox.
+                Subscribe to our newsletter and get the latest hackathon tips, 
+                technical insights, and innovation trends delivered to your inbox.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -524,14 +548,14 @@ const BlogsSection = forwardRef((props, ref) => {
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
-                <button className="px-6 py-3 bg-white text-green-600 hover:bg-gray-100 font-medium rounded-lg transition-colors">
+                <button className="px-6 py-3 bg-white text-[#8B5CF6] hover:bg-gray-100 font-medium rounded-lg transition-colors">
                   Subscribe
                 </button>
               </div>
             </div>
           </div>
 
-          <button className="px-8 py-4 bg-white/70 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium rounded-lg border border-white/20 dark:border-slate-700/20 transition-all shadow-lg">
+          <button className="px-8 py-4 bg-white/70 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-[#8B5CF6]/30 font-medium rounded-lg border border-white/20 dark:border-slate-700/20 transition-all shadow-lg">
             Load More Articles
           </button>
         </motion.div>

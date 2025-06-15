@@ -7,12 +7,14 @@ import {
   Menu,
   X,
   Monitor,
-  BookOpen,
+  Code,
   Target,
   Users,
   Calendar,
   TrendingUp,
-  FileText,
+  Trophy,
+  Lightbulb,
+  Zap,
 } from "lucide-react";
 
 const Header = () => {
@@ -21,13 +23,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Navigation items
+  // Navigation items - Updated for hackathon platform
   const navigationItems = [
     { name: "Home", path: "/", icon: <Target className="w-4 h-4" /> },
     {
-      name: "Materials",
-      path: "/materials",
-      icon: <BookOpen className="w-4 h-4" />,
+      name: "Resources",
+      path: "/resources",
+      icon: <Code className="w-4 h-4" />,
     },
     {
       name: "Planner",
@@ -35,16 +37,16 @@ const Header = () => {
       icon: <Calendar className="w-4 h-4" />,
     },
     {
-      name: "Progress",
-      path: "/progress",
-      icon: <TrendingUp className="w-4 h-4" />,
+      name: "Hackathons",
+      path: "/hackathons",
+      icon: <Trophy className="w-4 h-4" />,
     },
     {
       name: "Community",
       path: "/community",
       icon: <Users className="w-4 h-4" />,
     },
-    { name: "Blogs", path: "/blogs", icon: <FileText className="w-4 h-4" /> },
+    { name: "Projects", path: "/projects", icon: <Lightbulb className="w-4 h-4" /> },
   ];
 
   useEffect(() => {
@@ -79,7 +81,7 @@ const Header = () => {
               LLEGPT
               <div className="flex items-center ml-2">
                 <span className="text-sm font-medium text-gray-400 dark:text-gray-500">/</span>
-                <span className="text-sm font-semibold bg-gradient-to-r from-indigo-700 to-purple-700 bg-clip-text text-transparent px-1">
+                <span className="text-sm font-semibold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent px-1">
                   HACK
                 </span>
               </div>
@@ -95,8 +97,8 @@ const Header = () => {
                   to={item.path}
                   className={`px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 ${
                     location.pathname === item.path
-                      ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm"
-                      : "text-gray-600 dark:text-gray-300 hover:bg-white/50 dark:hover:bg-gray-800/50"
+                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-sm"
+                      : "text-gray-600 dark:text-gray-300 hover:bg-white/50 dark:hover:bg-gray-800/50 hover:text-[#8B5CF6] dark:hover:text-[#A78BFA]"
                   }`}
                 >
                   {item.icon}
@@ -114,36 +116,38 @@ const Header = () => {
                 onClick={() => theme.setTheme("light")}
                 className={`p-2 rounded-md transition-all ${
                   theme.current === "light"
-                    ? "bg-white dark:bg-gray-700 shadow-md"
-                    : ""
+                    ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-md"
+                    : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                 }`}
                 aria-label="Light theme"
               >
-                <Sun className="w-4 h-4 dark:text-white text-black" />
+                <Sun className="w-4 h-4" />
               </button>
               <button
                 onClick={() => theme.setTheme("dark")}
                 className={`p-2 rounded-md transition-all ${
                   theme.current === "dark"
-                    ? "bg-white dark:bg-gray-700 shadow-md"
-                    : ""
+                    ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-md"
+                    : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                 }`}
                 aria-label="Dark theme"
               >
-                <Moon className="w-4 h-4 dark:text-white text-black" />
+                <Moon className="w-4 h-4" />
               </button>
               <button
                 onClick={() => theme.setTheme("system")}
                 className={`p-2 rounded-md transition-all ${
                   theme.current === "system"
-                    ? "bg-white dark:bg-gray-700 shadow-md"
-                    : ""
+                    ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-md"
+                    : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                 }`}
                 aria-label="System theme"
               >
-                <Monitor className="w-4 h-4 dark:text-white text-black" />
+                <Monitor className="w-4 h-4" />
               </button>
             </div>
+
+           
 
             {/* Mobile Menu Button */}
             <button
@@ -182,7 +186,7 @@ const Header = () => {
                 LLEGPT
                 <div className="flex items-center ml-2">
                   <span className="text-sm font-medium text-gray-400 dark:text-gray-500">/</span>
-                  <span className="text-sm font-semibold from-indigo-700 to-purple-700 to-green-600 bg-clip-text text-transparent px-1">
+                  <span className="text-sm font-semibold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent px-1">
                     HACK
                   </span>
                 </div>
@@ -203,20 +207,36 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`flex items-center p-3 rounded-lg ${
+                  className={`flex items-center p-3 rounded-lg transition-all ${
                     location.pathname === item.path
-                      ? "bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 font-medium"
-                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      ? "bg-gradient-to-r from-[#8B5CF6]/10 to-[#A78BFA]/10 dark:from-[#8B5CF6]/20 dark:to-[#A78BFA]/20 text-[#8B5CF6] dark:text-[#A78BFA] font-medium border border-[#8B5CF6]/20"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-[#8B5CF6] dark:hover:text-[#A78BFA]"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span className="p-1 rounded-md bg-white dark:bg-gray-800 shadow-sm mr-3">
+                  <span className={`p-1.5 rounded-md shadow-sm mr-3 ${
+                    location.pathname === item.path
+                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white"
+                      : "bg-white dark:bg-gray-800"
+                  }`}>
                     {item.icon}
                   </span>
                   <span>{item.name}</span>
                 </Link>
               ))}
             </nav>
+
+            {/* Mobile CTA Button */}
+            <div className="mt-6 px-3">
+              <Link
+                to="/hackathons"
+                className="w-full inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] hover:from-[#7C3AED] hover:to-[#8B5CF6] text-white font-medium rounded-lg shadow-lg transition-all"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Zap className="w-4 h-4 mr-2" />
+                Join Hackathon
+              </Link>
+            </div>
 
             {/* Theme Switcher */}
             <div className="mt-6 px-3">
@@ -226,43 +246,58 @@ const Header = () => {
               <div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg flex items-center">
                 <button
                   onClick={() => theme.setTheme("light")}
-                  className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center ${
+                  className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center transition-all ${
                     theme.current === "light"
-                      ? "bg-white dark:bg-gray-700 shadow-sm"
-                      : ""
+                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-sm"
+                      : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                   }`}
                 >
-                  <Sun className="w-5 h-5 text-black dark:text-white" />
-                  <span className="text-xs mt-1 text-black dark:text-white">
-                    Light
-                  </span>
+                  <Sun className="w-5 h-5" />
+                  <span className="text-xs mt-1">Light</span>
                 </button>
                 <button
                   onClick={() => theme.setTheme("dark")}
-                  className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center ${
+                  className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center transition-all ${
                     theme.current === "dark"
-                      ? "bg-white dark:bg-gray-700 shadow-sm"
-                      : ""
+                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-sm"
+                      : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                   }`}
                 >
-                  <Moon className="w-5 h-5 text-black dark:text-white" />
-                  <span className="text-xs mt-1 text-black dark:text-white">
-                    Dark
-                  </span>
+                  <Moon className="w-5 h-5" />
+                  <span className="text-xs mt-1">Dark</span>
                 </button>
                 <button
                   onClick={() => theme.setTheme("system")}
-                  className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center ${
+                  className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center transition-all ${
                     theme.current === "system"
-                      ? "bg-white dark:bg-gray-700 shadow-sm"
-                      : ""
+                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-sm"
+                      : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                   }`}
                 >
-                  <Monitor className="w-5 h-5 text-black dark:text-white" />
-                  <span className="text-xs mt-1 text-black dark:text-white">
-                    System
-                  </span>
+                  <Monitor className="w-5 h-5" />
+                  <span className="text-xs mt-1">System</span>
                 </button>
+              </div>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="mt-6 px-3">
+              <h3 className="text-xs uppercase font-medium text-gray-500 dark:text-gray-400 mb-3 tracking-wider">
+                Quick Stats
+              </h3>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-600 dark:text-gray-400">Active Hackathons</span>
+                  <span className="text-[#8B5CF6] dark:text-[#A78BFA] font-medium">12</span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-600 dark:text-gray-400">Online Developers</span>
+                  <span className="text-[#8B5CF6] dark:text-[#A78BFA] font-medium">15.2K</span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-600 dark:text-gray-400">Total Projects</span>
+                  <span className="text-[#8B5CF6] dark:text-[#A78BFA] font-medium">8.9K</span>
+                </div>
               </div>
             </div>
           </div>

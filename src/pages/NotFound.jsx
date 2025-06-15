@@ -24,7 +24,7 @@ const NotFound = () => {
         <div className="absolute inset-0 opacity-5 dark:opacity-10">
           <div className="w-full h-full bg-[linear-gradient(transparent_9px,#22c55e_1px),linear-gradient(90deg,transparent_9px,#22c55e_1px)] bg-[length:100px_100px]"></div>
         </div>
-        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-green-500/10 to-transparent blur-[80px]"></div>
+        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-indigo-500/10 to-transparent blur-[80px]"></div>
         <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-emerald-500/10 to-transparent blur-[100px]"></div>
       </div>
 
@@ -70,7 +70,7 @@ const NotFound = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-700 to-purple-800 hover:from-green-700 hover:to-emerald-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Return Home
             </Link>

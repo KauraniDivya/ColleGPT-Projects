@@ -70,7 +70,7 @@ const NotFound = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-700 to-purple-800 hover:from-green-700 hover:to-emerald-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-700 to-purple-800 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Return Home
             </Link>

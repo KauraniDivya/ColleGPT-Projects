@@ -179,43 +179,43 @@ const MaterialsSection = forwardRef((props, ref) => {
         sectionRef.current = node;
       }}
       id="materials"
-      className="relative min-h-screen py-20 bg-slate-50 dark:bg-[#0C0C20] overflow-hidden"
+      className="relative min-h-screen py-12 sm:py-16 md:py-20 bg-slate-50 dark:bg-[#0C0C20] overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 opacity-5 dark:opacity-10">
-          <div className="w-full h-full bg-[linear-gradient(transparent_9px,#8B5CF6_1px),linear-gradient(90deg,transparent_9px,#8B5CF6_1px)] bg-[length:100px_100px]"></div>
+          <div className="w-full h-full bg-[linear-gradient(transparent_9px,#8B5CF6_1px),linear-gradient(90deg,transparent_9px,#8B5CF6_1px)] bg-[length:50px_50px] sm:bg-[length:75px_75px] md:bg-[length:100px_100px]"></div>
         </div>
-        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#8B5CF6]/10 to-transparent blur-[80px]"></div>
-        <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#A78BFA]/10 to-transparent blur-[100px]"></div>
+        <div className="absolute top-[10%] sm:top-[20%] left-[5%] sm:left-[10%] w-[200px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[300px] md:h-[400px] rounded-full bg-gradient-to-br from-[#8B5CF6]/10 to-transparent blur-[40px] sm:blur-[60px] md:blur-[80px]"></div>
+        <div className="absolute bottom-[5%] sm:bottom-[10%] right-[5%] sm:right-[15%] w-[250px] sm:w-[400px] md:w-[500px] h-[250px] sm:h-[400px] md:h-[500px] rounded-full bg-gradient-to-br from-[#A78BFA]/10 to-transparent blur-[60px] sm:blur-[80px] md:blur-[100px]"></div>
       </div>
 
-      {/* Dynamic cursor light effect */}
+      {/* Dynamic cursor light effect - disabled on mobile for performance */}
       <div
-        className="absolute inset-0 -z-5 overflow-hidden"
+        className="absolute inset-0 -z-5 overflow-hidden hidden sm:block"
         style={{
           background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(139,92,246,0.07), transparent 80%)`,
         }}
       />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center mb-16 text-center"
+          className="flex flex-col items-center mb-12 sm:mb-16 text-center"
         >
-          <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm bg-white/10 dark:bg-slate-800/20 backdrop-blur-sm border border-white/10 dark:border-slate-700/20 mb-6">
+          <span className="inline-flex items-center rounded-full px-3 sm:px-4 py-1.5 text-xs sm:text-sm bg-white/10 dark:bg-slate-800/20 backdrop-blur-sm border border-white/10 dark:border-slate-700/20 mb-4 sm:mb-6">
             <span className="inline-block w-2 h-2 rounded-full bg-[#8B5CF6] mr-2 animate-pulse"></span>
             <span className="bg-gradient-to-r from-slate-700 dark:from-slate-100 to-slate-500 dark:to-slate-300 bg-clip-text text-transparent font-medium">
               Comprehensive Development Resources
             </span>
           </span>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 relative">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 relative">
             <span className="bg-gradient-to-r from-slate-900 dark:from-white to-slate-600 dark:to-slate-300 bg-clip-text text-transparent relative z-10">
               Developer 
             </span>
@@ -230,7 +230,7 @@ const MaterialsSection = forwardRef((props, ref) => {
           </h2>
 
           <motion.p
-            className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -241,7 +241,7 @@ const MaterialsSection = forwardRef((props, ref) => {
         </motion.div>
 
         {/* Main Content Layout */}
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-12 lg:gap-16">
           {/* Left Side: Categories */}
           <motion.div
             className="w-full lg:w-2/5"
@@ -249,35 +249,35 @@ const MaterialsSection = forwardRef((props, ref) => {
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
           >
-            <motion.div variants={itemVariants} className="mb-8">
-              <div className="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 dark:border-slate-700/20 shadow-lg">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-                  <Code className="w-6 h-6 text-[#8B5CF6] mr-2" />
+            <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
+              <div className="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20 dark:border-slate-700/20 shadow-lg">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 flex items-center">
+                  <Code className="w-5 h-5 sm:w-6 sm:h-6 text-[#8B5CF6] mr-2" />
                   Tech Categories
                 </h3>
                 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {resourceCategories.map((category, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      className={`flex items-center p-4 rounded-xl cursor-pointer transition-all ${
+                      className={`flex items-center p-3 sm:p-4 rounded-lg sm:rounded-xl cursor-pointer transition-all ${
                         activeCategory === idx
                           ? "bg-[#8B5CF6]/10 border-[#8B5CF6]"
-                          : "bg-slate-50 dark:bg-slate-700/30 border-transparent"
+                          : "bg-slate-50 dark:bg-slate-700/30 border-transparent hover:bg-slate-100 dark:hover:bg-slate-700/40"
                       } border`}
                       onClick={() => setActiveCategory(idx)}
                     >
-                      <div className={`w-10 h-10 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center mr-4`}>
-                        <category.icon className="w-5 h-5 text-[#8B5CF6]" />
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0`}>
+                        <category.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#8B5CF6]" />
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-slate-900 dark:text-white">
+                      <div className="min-w-0 flex-1">
+                        <h4 className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base truncate">
                           {category.title}
                         </h4>
-                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 line-clamp-2 sm:line-clamp-none">
                           {category.description}
                         </p>
                       </div>
@@ -296,56 +296,56 @@ const MaterialsSection = forwardRef((props, ref) => {
             animate={isVisible ? "visible" : "hidden"}
           >
             <motion.div variants={itemVariants}>
-              <div className="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 dark:border-slate-700/20 shadow-lg">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center">
-                    <FileText className="w-6 h-6 text-[#8B5CF6] mr-2" />
-                    {resourceCategories[activeCategory].title}
+              <div className="bg-white/70 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20 dark:border-slate-700/20 shadow-lg">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 gap-2 sm:gap-0">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white flex items-center">
+                    <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-[#8B5CF6] mr-2" />
+                    <span className="truncate">{resourceCategories[activeCategory].title}</span>
                   </h3>
-                  <div className="flex items-center text-sm text-slate-600 dark:text-slate-400">
-                    <Clock className="w-4 h-4 mr-1" />
+                  <div className="flex items-center text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                    <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                     Last Updated: June 2025
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {developmentResources.map((resource, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      className="bg-slate-50 dark:bg-slate-700/30 rounded-xl p-4 border border-slate-200 dark:border-slate-600/30 hover:border-[#8B5CF6] transition-all"
+                      className="bg-slate-50 dark:bg-slate-700/30 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-slate-200 dark:border-slate-600/30 hover:border-[#8B5CF6] transition-all"
                     >
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <h4 className="font-semibold text-slate-900 dark:text-white mb-1">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-semibold text-slate-900 dark:text-white mb-1 text-sm sm:text-base">
                             {resource.title}
                           </h4>
-                          <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-2">
                             {resource.type}
                           </p>
-                          <div className="flex items-center gap-4 text-sm">
+                          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm">
                             <span className="text-slate-600 dark:text-slate-400">
                               {resource.subjects} Technologies
                             </span>
-                            <span className="text-slate-600 dark:text-slate-400">
+                            <span className="text-slate-600 dark:text-slate-400 hidden sm:inline">
                               {resource.items} Resources
                             </span>
                             <div className="flex items-center text-[#8B5CF6]">
-                              <Star className="w-4 h-4 fill-current mr-1" />
+                              <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current mr-1" />
                               {resource.rating}
                             </div>
                           </div>
                         </div>
-                        <div className="flex flex-col items-end">
-                          <div className="flex items-center text-sm text-slate-600 dark:text-slate-400 mb-2">
-                            <Download className="w-4 h-4 mr-1" />
+                        <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 sm:gap-0">
+                          <div className="flex items-center text-xs sm:text-sm text-slate-600 dark:text-slate-400 sm:mb-2">
+                            <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                             {resource.downloads}
                           </div>
-                          <button className="px-4 py-2 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#A78BFA] transition-colors flex items-center">
+                          <button className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#8B5CF6] text-white rounded-md sm:rounded-lg hover:bg-[#A78BFA] transition-colors flex items-center text-xs sm:text-sm font-medium">
                             Access
-                            <ArrowRight className="w-4 h-4 ml-2" />
+                            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
                           </button>
                         </div>
                       </div>

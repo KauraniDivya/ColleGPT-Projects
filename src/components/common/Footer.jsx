@@ -17,6 +17,8 @@ import {
   Lightbulb,
   ArrowRight,
   Zap,
+  Star,
+  Trophy,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -39,44 +41,44 @@ const Footer = () => {
       toast.error("Please enter a valid email address");
       return;
     }
-    toast.success("Thanks for subscribing to Hackathon updates!");
+    toast.success("Thanks for subscribing to Developer updates!");
     setEmail("");
   };
 
   const footerLinks = {
-    "Dev Resources": [
+    "Developer Hub": [
       {
-        name: "Code Templates",
-        href: "/templates",
+        name: "GitHub Trending",
+        href: "/trending",
+        icon: <Github className="w-4 h-4" />,
+      },
+      {
+        name: "AI Projects",
+        href: "/ai-projects",
+        icon: <Lightbulb className="w-4 h-4" />,
+      },
+      {
+        name: "Open Source",
+        href: "/opensource",
         icon: <Code className="w-4 h-4" />,
       },
       {
-        name: "API Collections",
-        href: "/apis",
-        icon: <Zap className="w-4 h-4" />,
-      },
-      {
         name: "Project Tracker",
-        href: "/progress",
+        href: "/tracker",
         icon: <TrendingUp className="w-4 h-4" />,
-      },
-      {
-        name: "Hackathon Planner",
-        href: "/planner",
-        icon: <Calendar className="w-4 h-4" />,
       },
     ],
     Community: [
       { name: "Developer Forum", href: "/community" },
-      { name: "Winner Stories", href: "/success-stories" },
-      { name: "Team Formation", href: "/teams" },
-      { name: "Mentor Network", href: "/mentors" },
+      { name: "Success Stories", href: "/success-stories" },
+      { name: "Mentorship", href: "/mentors" },
+      { name: "Collaboration", href: "/collaborate" },
     ],
-    Hackathons: [
-      { name: "Upcoming Events", href: "/hackathons" },
-      { name: "Event Guidelines", href: "/guidelines" },
-      { name: "Judging Criteria", href: "/criteria" },
-      { name: "Prize Structure", href: "/prizes" },
+    Resources: [
+      { name: "Global Hackathons", href: "/hackathons" },
+      { name: "Learning Paths", href: "/learn" },
+      { name: "Best Practices", href: "/practices" },
+      { name: "Industry Insights", href: "/insights" },
     ],
   };
 
@@ -156,8 +158,8 @@ const Footer = () => {
                 LLEGPT
                 <div className="flex items-center ml-2">
                   <span className="text-sm font-medium text-gray-400 dark:text-gray-500">/</span>
-                  <span className="text-sm font-semibold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent px-1">
-                    HACK
+                  <span className="text-sm font-semibold bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text text-transparent px-1">
+                    DEV
                   </span>
                 </div>
               </span>
@@ -165,39 +167,40 @@ const Footer = () => {
 
             <div className="space-y-6">
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-                Comprehensive collection of development resources, tools, and learning materials to help you excel in hackathons and build innovative projects.
+                Your gateway to the global developer ecosystem. Access trending GitHub repositories, 
+                join world-class hackathons, and collaborate with 100M+ developers worldwide on groundbreaking open source projects.
               </p>
 
               <div className="flex gap-4">
                 <SocialLink
-                  href="https://www.github.com/hackathon-platform"
+                  href="https://github.com/trending"
                   icon={<Github />}
                   label="GitHub"
                   className="bg-gray-900 text-white hover:bg-gray-700"
                 />
                 <SocialLink
-                  href="https://www.linkedin.com/company/hackathon-platform"
+                  href="https://www.linkedin.com/company/collegpt"
                   icon={<Linkedin />}
                   label="LinkedIn"
                   className="bg-[#0077B5] text-white hover:bg-blue-700"
                 />
                 <SocialLink
-                  href="https://twitter.com/hackathonplatform"
+                  href="https://twitter.com/collegpt"
                   icon={<Twitter />}
                   label="Twitter"
                   className="bg-[#1DA1F2] text-white hover:bg-blue-500"
                 />
                 <SocialLink
-                  href="https://www.instagram.com/hackathonplatform"
+                  href="https://www.instagram.com/collegpt"
                   icon={<Instagram />}
                   label="Instagram"
                   className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FFDC80] text-white"
                 />
                 <SocialLink
-                  href="https://hackathonplatform.com"
+                  href="https://collegpt.com"
                   icon={<Globe />}
                   label="Website"
-                  className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white"
+                  className="bg-gradient-to-r from-amber-600 to-yellow-500 text-white"
                 />
               </div>
             </div>
@@ -205,11 +208,12 @@ const Footer = () => {
             {/* Newsletter */}
             <div className="rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-xl dark:shadow-gray-900/20 backdrop-blur-xl border border-gray-100 dark:border-gray-700/50">
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2 flex items-center">
-                <Lightbulb className="w-5 h-5 mr-2 text-[#8B5CF6]" />
-                Stay Updated with Hackathon Events
+                <Star className="w-5 h-5 mr-2 text-amber-600" />
+                Stay Updated with Developer Trends
               </h3>
               <p className="text-slate-500 dark:text-slate-400 mb-4 text-sm">
-                Get the latest hackathon announcements, developer resources, and winning project insights delivered to your inbox.
+                Get weekly insights on trending GitHub projects, global hackathon opportunities, 
+                AI innovations, and open source breakthroughs delivered to your inbox.
               </p>
               <form onSubmit={handleSubscribe} className="space-y-3">
                 <div className="relative">
@@ -220,7 +224,7 @@ const Footer = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 
                     bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm text-slate-900 dark:text-white
-                    focus:ring-2 focus:ring-[#8B5CF6] dark:focus:ring-[#A78BFA] outline-none
+                    focus:ring-2 focus:ring-amber-600 dark:focus:ring-yellow-500 outline-none
                     placeholder-slate-500 dark:placeholder-slate-400 transition-all"
                     required
                   />
@@ -230,10 +234,10 @@ const Footer = () => {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-4 py-3 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA]
-                  hover:from-[#7C3AED] hover:to-[#8B5CF6]
-                  dark:from-[#8B5CF6] dark:to-[#A78BFA] dark:hover:from-[#7C3AED] dark:hover:to-[#8B5CF6] 
-                  text-white font-medium transition-all shadow-lg shadow-[#8B5CF6]/20 dark:shadow-[#8B5CF6]/10 
+                  className="w-full px-4 py-3 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-500
+                  hover:from-amber-700 hover:to-amber-600
+                  dark:from-amber-600 dark:to-yellow-500 dark:hover:from-amber-700 dark:hover:to-amber-600 
+                  text-white font-medium transition-all shadow-lg shadow-amber-600/20 dark:shadow-amber-600/10 
                   flex items-center justify-center gap-2"
                 >
                   Subscribe to Updates
@@ -251,7 +255,7 @@ const Footer = () => {
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6 relative inline-flex items-center">
                     {category}
                     <motion.span
-                      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] dark:from-[#A78BFA] dark:to-[#8B5CF6] rounded-full"
+                      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-amber-600 to-yellow-500 dark:from-yellow-500 dark:to-amber-600 rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
                       transition={{ duration: 0.8, delay: 0.2 }}
@@ -273,12 +277,12 @@ const Footer = () => {
                         <Link
                           to={link.href}
                           className="group flex items-center text-slate-600 dark:text-slate-300 
-                          hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] transition-all"
+                          hover:text-amber-600 dark:hover:text-yellow-400 transition-all"
                         >
                           {link.icon && (
                             <span
                               className="mr-3 text-slate-400 dark:text-slate-500 
-                              group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA] transition-colors"
+                              group-hover:text-amber-600 dark:group-hover:text-yellow-400 transition-colors"
                             >
                               {link.icon}
                             </span>
@@ -289,7 +293,7 @@ const Footer = () => {
                               className="opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-0"
                               transition={{ duration: 0.3 }}
                             >
-                              <ArrowRight className="w-3 h-3 text-[#8B5CF6]" />
+                              <ArrowRight className="w-3 h-3 text-amber-600" />
                             </motion.span>
                           </span>
                         </Link>
@@ -306,25 +310,27 @@ const Footer = () => {
         <div className="border-t border-gray-200 dark:border-gray-700/50 pt-10 mt-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-slate-500 dark:text-slate-400">
-              &copy; {currentDate.getFullYear()} Hackathon Platform by ColleGPT.
-              All rights reserved.
+              &copy; {currentDate.getFullYear()} Developer Platform by ColleGPT.
+              Connecting {" "}
+              <span className="text-amber-600 dark:text-yellow-400 font-medium">100M+ developers</span>
+              {" "} worldwide.
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
               <Link
                 to="/privacy"
-                className="hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] transition-colors"
+                className="hover:text-amber-600 dark:hover:text-yellow-400 transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/terms"
-                className="hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] transition-colors"
+                className="hover:text-amber-600 dark:hover:text-yellow-400 transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
                 to="/contact"
-                className="hover:text-[#8B5CF6] dark:hover:text-[#A78BFA] transition-colors"
+                className="hover:text-amber-600 dark:hover:text-yellow-400 transition-colors"
               >
                 Contact Us
               </Link>

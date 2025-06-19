@@ -22,17 +22,17 @@ const NotFound = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 opacity-5 dark:opacity-10">
-          <div className="w-full h-full bg-[linear-gradient(transparent_9px,#22c55e_1px),linear-gradient(90deg,transparent_9px,#22c55e_1px)] bg-[length:100px_100px]"></div>
+          <div className="w-full h-full bg-[linear-gradient(transparent_9px,#F59E0B_1px),linear-gradient(90deg,transparent_9px,#F59E0B_1px)] bg-[length:100px_100px]"></div>
         </div>
-        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-indigo-500/10 to-transparent blur-[80px]"></div>
-        <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-emerald-500/10 to-transparent blur-[100px]"></div>
+        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-amber-500/10 to-transparent blur-[80px]"></div>
+        <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-yellow-500/10 to-transparent blur-[100px]"></div>
       </div>
 
       {/* Dynamic cursor light effect */}
       <div
         className="absolute inset-0 -z-5 overflow-hidden"
         style={{
-          background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(34,197,94,0.07), transparent 80%)`,
+          background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(245,158,11,0.07), transparent 80%)`,
         }}
       />
 
@@ -40,7 +40,7 @@ const NotFound = () => {
       <div className="container mx-auto px-4 pt-20 pb-8 relative z-20">
         <div className="text-center">
           <motion.h1 
-            className="text-9xl font-bold text-indigo-600 dark:text-indigo-400 mb-4"
+            className="text-9xl font-bold text-amber-600 dark:text-yellow-400 mb-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -53,7 +53,7 @@ const NotFound = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Oops! Page Not Found
+            Oops! Repository Not Found
           </motion.h2>
           <motion.p 
             className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto"
@@ -61,19 +61,21 @@ const NotFound = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            The page you're looking for seems to have drifted off into space. Let's get you back on track!
+            The page you're looking for seems to have been pushed to a different branch. Let's get you back to the main repository!
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
+            className="space-y-4"
           >
             <Link
               to="/"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-700 to-purple-800 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-700 hover:to-amber-600 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-amber-500/25"
             >
-              Return Home
+              Return to Developer Hub
             </Link>
+          
           </motion.div>
         </div>
       </div>
@@ -105,7 +107,7 @@ const NotFound = () => {
           >
             <img
               src="https://i.ibb.co/4Z2VV9Zp/image.png"
-              alt="Floating Astronaut"
+              alt="Floating Developer"
               className="w-full h-full object-contain"
             />
 
@@ -125,7 +127,7 @@ const NotFound = () => {
             />
 
             {/* Subtle glow effect */}
-            <div className="absolute inset-0 rounded-full bg-indigo-500/10 dark:bg-indigo-400/10 blur-2xl -z-10"></div>
+            <div className="absolute inset-0 rounded-full bg-amber-500/10 dark:bg-yellow-400/10 blur-2xl -z-10"></div>
           </motion.div>
         </div>
       </div>
@@ -133,4 +135,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound; 
+export default NotFound;

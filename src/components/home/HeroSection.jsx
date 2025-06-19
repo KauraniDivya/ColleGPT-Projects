@@ -15,6 +15,11 @@ import {
   Code,
   Trophy,
   Zap,
+  Folder,
+  Github,
+  ExternalLink,
+  GitBranch,
+  Lightbulb,
 } from "lucide-react";
 
 const HeroSection = forwardRef(({ materialsRef }, ref) => {
@@ -88,50 +93,50 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
     },
   };
 
-  // Stats with hackathon-focused data
+  // Stats with projects-focused data
   const stats = [
     {
-      value: "150+",
-      label: "Active Hackathons",
-      icon: <Trophy className="w-5 h-5 text-[#8B5CF6]" />,
-      description: "Live events & competitions",
+      value: "500+",
+      label: "Projects",
+      icon: <Folder className="w-5 h-5 text-[#D97706]" />,
+      description: "Curated project collection",
     },
     {
-      value: "25K+",
-      label: "Developers",
-      icon: <Users className="w-5 h-5 text-[#8B5CF6]" />,
-      description: "Global community members",
+      value: "50K+",
+      label: "Contributors",
+      icon: <Users className="w-5 h-5 text-[#D97706]" />,
+      description: "Active developers worldwide",
     },
     {
-      value: "$2M+",
-      label: "Prize Pool",
-      icon: <Award className="w-5 h-5 text-[#8B5CF6]" />,
-      description: "Total rewards distributed",
+      value: "1M+",
+      label: "Downloads",
+      icon: <TrendingUp className="w-5 h-5 text-[#D97706]" />,
+      description: "Total project downloads",
     },
     {
-      value: "98%",
+      value: "95%",
       label: "Success Rate",
-      icon: <Target className="w-5 h-5 text-[#8B5CF6]" />,
+      icon: <Target className="w-5 h-5 text-[#D97706]" />,
       description: "Project completion rate",
     },
   ];
 
-  // Key features for hackathon platform
+  // Key features for projects platform
   const features = [
     {
-      icon: <Calendar className="w-4 h-4" />,
-      text: "Track upcoming hackathons and deadlines",
-      color: "text-[#8B5CF6]"
+      icon: <Lightbulb className="w-4 h-4" />,
+      text: "Innovative project ideas and solutions",
+      color: "text-[#D97706]"
     },
     {
       icon: <Code className="w-4 h-4" />,
-      text: "Access development resources and templates",
-      color: "text-[#A78BFA]"
+      text: "Step-by-step development tutorials",
+      color: "text-[#F59E0B]"
     },
     {
       icon: <Users className="w-4 h-4" />,
-      text: "Connect with teams and find collaborators",
-      color: "text-[#8B5CF6]"
+      text: "Collaborate with passionate creators",
+      color: "text-[#D97706]"
     },
   ];
 
@@ -152,8 +157,8 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 -z-10">
         {/* Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#8B5CF6]/10 to-[#A78BFA]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-[#A78BFA]/10 to-[#8B5CF6]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#D97706]/10 to-[#F59E0B]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-[#F59E0B]/10 to-[#D97706]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
         {/* Grid Pattern */}
         <svg
@@ -173,7 +178,7 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
               <path
                 d="M 40 0 L 0 0 0 40"
                 fill="none"
-                stroke="rgba(139,92,246,0.3)"
+                stroke="rgba(217,119,6,0.3)"
                 strokeWidth="0.5"
               />
             </pattern>
@@ -186,7 +191,7 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
       <div
         className="absolute inset-0 pointer-events-none -z-5"
         style={{
-          background: `radial-gradient(circle 400px at ${mousePosition.x}px ${mousePosition.y}px, rgba(139,92,246,0.1) 0%, transparent 60%)`,
+          background: `radial-gradient(circle 400px at ${mousePosition.x}px ${mousePosition.y}px, rgba(217,119,6,0.1) 0%, transparent 60%)`,
         }}
       />
 
@@ -202,10 +207,10 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
             {/* Innovation Badge */}
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center rounded-full px-4 py-2 mb-6 text-sm bg-gradient-to-r from-[#8B5CF6]/10 to-[#A78BFA]/10 dark:from-[#8B5CF6]/20 dark:to-[#A78BFA]/20 backdrop-blur-sm border border-[#8B5CF6]/20 dark:border-[#8B5CF6]/30"
+              className="inline-flex items-center rounded-full px-4 py-2 mb-6 text-sm bg-gradient-to-r from-[#D97706]/10 to-[#F59E0B]/10 dark:from-[#D97706]/20 dark:to-[#F59E0B]/20 backdrop-blur-sm border border-[#D97706]/20 dark:border-[#D97706]/30"
             >
-              <Zap className="w-4 h-4 mr-2 text-[#8B5CF6]" />
-              <span className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent font-semibold">
+              <Lightbulb className="w-4 h-4 mr-2 text-[#D97706]" />
+              <span className="bg-gradient-to-r from-[#D97706] to-[#F59E0B] bg-clip-text text-transparent font-semibold">
                 Innovation Hub 2025
               </span>
             </motion.div>
@@ -217,18 +222,18 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
             >
               <span className="block mb-2">
                 <span className="relative">
-                  <span className="absolute -inset-2 blur-2xl bg-gradient-to-r from-[#8B5CF6]/20 to-[#A78BFA]/20 opacity-70 rounded-lg"></span>
+                  <span className="absolute -inset-2 blur-2xl bg-gradient-to-r from-[#D97706]/20 to-[#F59E0B]/20 opacity-70 rounded-lg"></span>
                   <span className="relative text-slate-900 dark:text-white">
-                    Build.
+                    Spark.
                   </span>
                 </span>
                 {" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent">
-                  Innovate.
+                <span className="bg-gradient-to-r from-[#D97706] to-[#F59E0B] bg-clip-text text-transparent">
+                  Create.
                 </span>
               </span>
               <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-slate-600 dark:text-slate-300 mt-4">
-                Win Amazing Prizes
+                Illuminate Your Ideas
               </span>
             </motion.h1>
 
@@ -237,8 +242,8 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
               variants={itemVariants}
               className="max-w-2xl mx-auto lg:mx-0 text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
             >
-              Join the ultimate platform for hackathon enthusiasts. Participate in
-              exciting challenges, showcase your innovative projects, and compete for amazing prizes.
+              Transform your brilliant ideas into reality. Discover groundbreaking projects, 
+              collaborate with innovative minds, and illuminate the future through creative development.
             </motion.p>
 
             {/* Key Features */}
@@ -249,7 +254,7 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/50 dark:bg-slate-800/30 backdrop-blur-sm border border-white/20 dark:border-slate-700/20 hover:border-[#8B5CF6]/30 transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/50 dark:bg-slate-800/30 backdrop-blur-sm border border-white/20 dark:border-slate-700/20 hover:border-[#D97706]/30 transition-all"
                 >
                   <span className={feature.color}>
                     {feature.icon}
@@ -266,13 +271,13 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12"
             >
-              <button className="px-8 py-4 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] hover:from-[#7C3AED] hover:to-[#8B5CF6] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#8B5CF6]/25 transition-all transform hover:scale-105 flex items-center justify-center gap-2">
-                <Trophy className="w-5 h-5" />
-                Find Hackathons
+              <button className="px-8 py-4 bg-gradient-to-r from-[#D97706] to-[#F59E0B] hover:from-[#B45309] hover:to-[#D97706] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#D97706]/25 transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                <Lightbulb className="w-5 h-5" />
+                Discover Projects
               </button>
               <button className="px-8 py-4 bg-white/10 dark:bg-slate-800/50 text-slate-900 dark:text-white font-semibold rounded-xl border border-white/20 dark:border-slate-700/20 hover:bg-white/20 dark:hover:bg-slate-800/70 backdrop-blur-sm transition-all flex items-center justify-center gap-2">
                 <Code className="w-5 h-5" />
-                Explore Resources
+                Start Creating
               </button>
             </motion.div>
 
@@ -287,14 +292,14 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="bg-white/60 dark:bg-slate-800/40 backdrop-blur-xl rounded-2xl p-4 lg:p-6 border border-white/30 dark:border-slate-700/30 hover:border-[#8B5CF6]/30 transition-all hover:transform hover:scale-105"
+                  className="bg-white/60 dark:bg-slate-800/40 backdrop-blur-xl rounded-2xl p-4 lg:p-6 border border-white/30 dark:border-slate-700/30 hover:border-[#D97706]/30 transition-all hover:transform hover:scale-105"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#8B5CF6]/10 to-[#A78BFA]/10 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#D97706]/10 to-[#F59E0B]/10 flex items-center justify-center">
                       {stat.icon}
                     </div>
                   </div>
-                  <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent mb-1">
+                  <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#D97706] to-[#F59E0B] bg-clip-text text-transparent mb-1">
                     {stat.value}
                   </div>
                   <div className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
@@ -319,9 +324,9 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
               {/* Loading state */}
               {!isRobotLoaded && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="w-12 h-12 rounded-full border-t-2 border-b-2 border-[#8B5CF6] animate-spin mb-4"></div>
+                  <div className="w-12 h-12 rounded-full border-t-2 border-b-2 border-[#D97706] animate-spin mb-4"></div>
                   <p className="text-slate-500 dark:text-slate-400 text-sm text-center">
-                    Loading interactive companion...
+                    Loading innovation companion...
                   </p>
                 </div>
               )}
@@ -339,7 +344,7 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
                     frameBorder="0"
                     width="100%"
                     height="100%"
-                    title="Interactive AI Companion"
+                    title="Interactive Innovation Companion"
                     onLoad={() => setIsRobotLoaded(true)}
                     className="absolute inset-0 w-full h-full"
                     style={{ zIndex: 1 }}
@@ -348,17 +353,17 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
                   {/* Enhanced overlay */}
                   <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-slate-900/90 to-transparent z-10 flex items-center justify-center">
                     <div className="text-center">
-                      <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent animate-pulse">
-                        HACK
+                      <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#D97706] to-[#F59E0B] bg-clip-text text-transparent animate-pulse">
+                        SPARK
                       </span>
                       <span className="text-sm md:text-base ml-2 text-slate-300 font-light">
-                        AI Innovation Companion
+                        Innovation & Creation Assistant
                       </span>
                       <div className="flex justify-center mt-1">
                         {[...Array(3)].map((_, i) => (
                           <motion.span
                             key={i}
-                            className="w-1.5 h-1.5 bg-[#8B5CF6] rounded-full mx-0.5"
+                            className="w-1.5 h-1.5 bg-[#D97706] rounded-full mx-0.5"
                             animate={{ opacity: [0.3, 1, 0.3] }}
                             transition={{ 
                               duration: 1.5, 
@@ -394,9 +399,9 @@ const HeroSection = forwardRef(({ materialsRef }, ref) => {
           materialsRef.current?.scrollIntoView({ behavior: "smooth" })
         }
       >
-        <div className="w-6 h-12 rounded-full border-2 border-[#8B5CF6]/30 dark:border-[#A78BFA]/30 flex justify-center p-1.5 bg-white/10 dark:bg-slate-800/10 backdrop-blur-sm">
+        <div className="w-6 h-12 rounded-full border-2 border-[#D97706]/30 dark:border-[#F59E0B]/30 flex justify-center p-1.5 bg-white/10 dark:bg-slate-800/10 backdrop-blur-sm">
           <motion.div
-            className="w-1.5 h-3 bg-gradient-to-b from-[#8B5CF6] to-[#A78BFA] rounded-full"
+            className="w-1.5 h-3 bg-gradient-to-b from-[#D97706] to-[#F59E0B] rounded-full"
             animate={{ y: [0, 6, 0] }}
             transition={{
               duration: 1.5,

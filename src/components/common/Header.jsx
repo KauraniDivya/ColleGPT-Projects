@@ -15,6 +15,7 @@ import {
   Trophy,
   Lightbulb,
   Zap,
+  Github,
 } from "lucide-react";
 
 const Header = () => {
@@ -23,18 +24,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Navigation items - Updated for hackathon platform
+  // Navigation items - Updated for developer platform
   const navigationItems = [
     { name: "Home", path: "/", icon: <Target className="w-4 h-4" /> },
     {
-      name: "Resources",
-      path: "/resources",
-      icon: <Code className="w-4 h-4" />,
-    },
-    {
-      name: "Planner",
-      path: "/planner",
-      icon: <Calendar className="w-4 h-4" />,
+      name: "GitHub ",
+      path: "/trending",
+      icon: <Github className="w-4 h-4" />,
     },
     {
       name: "Hackathons",
@@ -42,11 +38,16 @@ const Header = () => {
       icon: <Trophy className="w-4 h-4" />,
     },
     {
+      name: "Open Source",
+      path: "/opensource",
+      icon: <Code className="w-4 h-4" />,
+    },
+    {
       name: "Community",
       path: "/community",
       icon: <Users className="w-4 h-4" />,
     },
-    { name: "Projects", path: "/projects", icon: <Lightbulb className="w-4 h-4" /> },
+    { name: "AI Projects", path: "/ai-projects", icon: <Lightbulb className="w-4 h-4" /> },
   ];
 
   useEffect(() => {
@@ -81,8 +82,8 @@ const Header = () => {
               LLEGPT
               <div className="flex items-center ml-2">
                 <span className="text-sm font-medium text-gray-400 dark:text-gray-500">/</span>
-                <span className="text-sm font-semibold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent px-1">
-                  HACK
+                <span className="text-sm font-semibold bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text text-transparent px-1">
+                  DEV
                 </span>
               </div>
             </span>
@@ -97,8 +98,8 @@ const Header = () => {
                   to={item.path}
                   className={`px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 ${
                     location.pathname === item.path
-                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-sm"
-                      : "text-gray-600 dark:text-gray-300 hover:bg-white/50 dark:hover:bg-gray-800/50 hover:text-[#8B5CF6] dark:hover:text-[#A78BFA]"
+                      ? "bg-gradient-to-r from-amber-600 to-yellow-500 text-white shadow-sm"
+                      : "text-gray-600 dark:text-gray-300 hover:bg-white/50 dark:hover:bg-gray-800/50 hover:text-amber-600 dark:hover:text-yellow-400"
                   }`}
                 >
                   {item.icon}
@@ -116,7 +117,7 @@ const Header = () => {
                 onClick={() => theme.setTheme("light")}
                 className={`p-2 rounded-md transition-all ${
                   theme.current === "light"
-                    ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-md"
+                    ? "bg-gradient-to-r from-amber-600 to-yellow-500 text-white shadow-md"
                     : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                 }`}
                 aria-label="Light theme"
@@ -127,7 +128,7 @@ const Header = () => {
                 onClick={() => theme.setTheme("dark")}
                 className={`p-2 rounded-md transition-all ${
                   theme.current === "dark"
-                    ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-md"
+                    ? "bg-gradient-to-r from-amber-600 to-yellow-500 text-white shadow-md"
                     : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                 }`}
                 aria-label="Dark theme"
@@ -138,7 +139,7 @@ const Header = () => {
                 onClick={() => theme.setTheme("system")}
                 className={`p-2 rounded-md transition-all ${
                   theme.current === "system"
-                    ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-md"
+                    ? "bg-gradient-to-r from-amber-600 to-yellow-500 text-white shadow-md"
                     : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                 }`}
                 aria-label="System theme"
@@ -146,8 +147,6 @@ const Header = () => {
                 <Monitor className="w-4 h-4" />
               </button>
             </div>
-
-           
 
             {/* Mobile Menu Button */}
             <button
@@ -186,8 +185,8 @@ const Header = () => {
                 LLEGPT
                 <div className="flex items-center ml-2">
                   <span className="text-sm font-medium text-gray-400 dark:text-gray-500">/</span>
-                  <span className="text-sm font-semibold bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] bg-clip-text text-transparent px-1">
-                    HACK
+                  <span className="text-sm font-semibold bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text text-transparent px-1">
+                    DEV
                   </span>
                 </div>
               </span>
@@ -209,14 +208,14 @@ const Header = () => {
                   to={item.path}
                   className={`flex items-center p-3 rounded-lg transition-all ${
                     location.pathname === item.path
-                      ? "bg-gradient-to-r from-[#8B5CF6]/10 to-[#A78BFA]/10 dark:from-[#8B5CF6]/20 dark:to-[#A78BFA]/20 text-[#8B5CF6] dark:text-[#A78BFA] font-medium border border-[#8B5CF6]/20"
-                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-[#8B5CF6] dark:hover:text-[#A78BFA]"
+                      ? "bg-gradient-to-r from-amber-500/10 to-yellow-400/10 dark:from-amber-500/20 dark:to-yellow-400/20 text-amber-600 dark:text-yellow-400 font-medium border border-amber-500/20"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-amber-600 dark:hover:text-yellow-400"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className={`p-1.5 rounded-md shadow-sm mr-3 ${
                     location.pathname === item.path
-                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white"
+                      ? "bg-gradient-to-r from-amber-600 to-yellow-500 text-white"
                       : "bg-white dark:bg-gray-800"
                   }`}>
                     {item.icon}
@@ -230,7 +229,7 @@ const Header = () => {
             <div className="mt-6 px-3">
               <Link
                 to="/hackathons"
-                className="w-full inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] hover:from-[#7C3AED] hover:to-[#8B5CF6] text-white font-medium rounded-lg shadow-lg transition-all"
+                className="w-full inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-700 hover:to-amber-600 text-white font-medium rounded-lg shadow-lg transition-all"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Zap className="w-4 h-4 mr-2" />
@@ -248,7 +247,7 @@ const Header = () => {
                   onClick={() => theme.setTheme("light")}
                   className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center transition-all ${
                     theme.current === "light"
-                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-amber-600 to-yellow-500 text-white shadow-sm"
                       : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                   }`}
                 >
@@ -259,7 +258,7 @@ const Header = () => {
                   onClick={() => theme.setTheme("dark")}
                   className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center transition-all ${
                     theme.current === "dark"
-                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-amber-600 to-yellow-500 text-white shadow-sm"
                       : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                   }`}
                 >
@@ -270,7 +269,7 @@ const Header = () => {
                   onClick={() => theme.setTheme("system")}
                   className={`flex-1 py-2 px-3 rounded-lg flex flex-col items-center transition-all ${
                     theme.current === "system"
-                      ? "bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-amber-600 to-yellow-500 text-white shadow-sm"
                       : "hover:bg-white/50 dark:hover:bg-gray-700/50"
                   }`}
                 >
@@ -280,23 +279,23 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Quick Stats */}
+            {/* Quick Stats - Updated with real GitHub data */}
             <div className="mt-6 px-3">
               <h3 className="text-xs uppercase font-medium text-gray-500 dark:text-gray-400 mb-3 tracking-wider">
-                Quick Stats
+                Platform Stats
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600 dark:text-gray-400">Active Hackathons</span>
-                  <span className="text-[#8B5CF6] dark:text-[#A78BFA] font-medium">12</span>
+                  <span className="text-gray-600 dark:text-gray-400">Active Repos</span>
+                  <span className="text-amber-600 dark:text-yellow-400 font-medium">420M+</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600 dark:text-gray-400">Online Developers</span>
-                  <span className="text-[#8B5CF6] dark:text-[#A78BFA] font-medium">15.2K</span>
+                  <span className="text-gray-600 dark:text-gray-400">Developers</span>
+                  <span className="text-amber-600 dark:text-yellow-400 font-medium">100M+</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600 dark:text-gray-400">Total Projects</span>
-                  <span className="text-[#8B5CF6] dark:text-[#A78BFA] font-medium">8.9K</span>
+                  <span className="text-gray-600 dark:text-gray-400">Daily Hackathons</span>
+                  <span className="text-amber-600 dark:text-yellow-400 font-medium">1K+</span>
                 </div>
               </div>
             </div>

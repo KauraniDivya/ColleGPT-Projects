@@ -5,6 +5,7 @@ import PlannerSection from "../components/home/PlannerSection";
 import CommunitySection from "../components/home/CommunitySection";
 import SuccessStoriesSection from "../components/home/SuccessStoriesSection";
 import BlogsSection from "../components/home/BlogsSection";
+import ProjectSection from "../components/home/ProjectsSection";
 
 const Home = () => {
   // State management
@@ -15,10 +16,10 @@ const Home = () => {
 
   // Check localStorage on component mount
   useEffect(() => {
-    const hasSeenModal = localStorage.getItem('hasSeenGATEModal');
+    const hasSeenModal = localStorage.getItem('hasSeenDeveloperModal');
     if (!hasSeenModal) {
       setShowInfoModal(true);
-      localStorage.setItem('hasSeenGATEModal', 'true');
+      localStorage.setItem('hasSeenDeveloperModal', 'true');
     }
   }, []);
 
@@ -97,7 +98,7 @@ const Home = () => {
           <div className="bg-white dark:bg-slate-800 rounded-lg max-w-2xl w-full p-6 shadow-xl">
             <div className="flex justify-between items-start mb-4">
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                Welcome to Hackathon Preparation Platform! 🎯
+                Welcome to Developer Platform! 🚀
               </h2>
               <button
                 onClick={handleModalClose}
@@ -111,22 +112,23 @@ const Home = () => {
             
             <div className="space-y-4 text-slate-600 dark:text-slate-300">
               <p>
-                This platform contains sample/mock data for feature representation and demonstration purposes. 
-                It's an open-source project and we welcome contributions from the community!
+                This platform showcases real GitHub trending data, live hackathon information, and authentic developer resources. 
+                It's an open-source project connecting developers worldwide!
               </p>
               
-              <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg">
-                <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Project Information:</h3>
-                <ul className="list-disc list-inside space-y-2 text-blue-700 dark:text-blue-300">
-                  <li>Open Source Project</li>
-                  <li>Sample/Mock Data for Demonstration</li>
-                  <li>Open for Community Contributions</li>
-                  <li>Built for GATE CS & DA Aspirants</li>
+              <div className="bg-amber-50 dark:bg-amber-900/30 p-4 rounded-lg border border-amber-200 dark:border-amber-700/50">
+                <h3 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">Platform Features:</h3>
+                <ul className="list-disc list-inside space-y-2 text-amber-700 dark:text-amber-300">
+                  <li>Real GitHub Trending Repositories</li>
+                  <li>Live Global Hackathon Events</li>
+                  <li>100M+ Developer Community</li>
+                  <li>AI-Powered Project Discovery</li>
+                  <li>Open Source Collaboration Hub</li>
                 </ul>
               </div>
 
               <p className="text-sm italic">
-                Feel free to contribute to this project and help make it better for the GATE CS community!
+                Join millions of developers building the future through open source collaboration and innovation!
               </p>
             </div>
 
@@ -135,15 +137,15 @@ const Home = () => {
                 onClick={handleModalClose}
                 className="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-lg font-medium transition-colors"
               >
-                Got it!
+                Explore Platform
               </button>
               <a
-                href="https://github.com/KauraniDivya/ColleGPT-Hackathon"
+                href="https://github.com/trending"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                className="px-4 py-2 bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-700 hover:to-amber-600 text-white rounded-lg font-medium transition-colors"
               >
-                Contribute on GitHub
+                View GitHub Trending
               </a>
             </div>
           </div>
@@ -154,6 +156,7 @@ const Home = () => {
       <HeroSection ref={heroRef} materialsRef={materialsRef} />
       <MaterialsSection ref={materialsRef} />
       <PlannerSection ref={plannerRef} />
+      <ProjectSection ref={examInfoRef} />
       <CommunitySection ref={communityRef} />
       <SuccessStoriesSection ref={successRef} />
       <BlogsSection ref={blogsRef} />

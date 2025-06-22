@@ -1,6 +1,7 @@
-// Replace the entire ProjectSection with amber theme:
+// Replace the entire ProjectSection with amber theme and real data:
 
 import React, { forwardRef, useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Calendar,
@@ -78,92 +79,92 @@ const ProjectSection = forwardRef((props, ref) => {
     { id: "resources", name: "Resources", fullName: "Learning Resources", icon: BookOpen },
   ];
 
-  // Featured projects
+  // Updated Featured projects with real data
   const featuredProjects = [
     {
-      title: "AI-Powered Task Manager",
-      description: "Intelligent task management with ML-driven priority suggestions",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1800",
-      tags: ["React", "Python", "TensorFlow"],
-      stars: 245,
-      demo: "#",
-      github: "#"
+      title: "Saarthi",
+      description: "Alumni Engagement Platform that bridges the gap between students and alumni through mentorship, networking, and career opportunities",
+      image: "https://i.ibb.co/d4d4pkF6/image.png",
+      tags: ["React.js", "Node.js", "MongoDB", "Socket.io"],
+      stars: 125,
+      demo: "https://saarthi-alumni.vercel.app",
+      github: "https://github.com/mayankyadav1711/Saarthi-Alumni-Platform"
     },
     {
-      title: "Real-time Collaboration Tool", 
-      description: "Live document editing with WebSocket integration",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1800",
-      tags: ["Vue.js", "Socket.io", "MongoDB"],
-      stars: 189,
-      demo: "#",
-      github: "#"
+      title: "Unite-Bharat", 
+      description: "SIH Finalist project - Dynamic project repository platform showcasing innovations from across India",
+      image: "https://i.ibb.co/wFjMJc1M/image.png",
+      tags: ["React.js", "Node.js", "MongoDB", "Express.js"],
+      stars: 89,
+      demo: "https://unite-bharat.vercel.app/",
+      github: "https://github.com/mayankyadav1711/Unite-Bharat"
     },
     {
-      title: "E-commerce Analytics Dashboard",
-      description: "Business intelligence dashboard with interactive charts",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1800", 
-      tags: ["Angular", "D3.js", "PostgreSQL"],
-      stars: 312,
-      demo: "#",
-      github: "#"
+      title: "Nivesh AI",
+      description: "Smart digital assistant for retail investors offering real-time stock market insights and personalized investment guidance",
+      image: "https://i.ibb.co/35qBmfSp/image.png", 
+      tags: ["React.js", "AI APIs", "Financial APIs", "Chart.js"],
+      stars: 67,
+      demo: "https://niveshai.vercel.app/",
+      github: "https://github.com/mayankyadav1711/Nivesh-AI"
     },
   ];
 
-  // Code templates
+  // Updated Code templates with real project-based templates
   const codeTemplates = [
     {
-      title: "MERN Stack Boilerplate",
-      description: "Complete authentication and CRUD operations setup",
-      downloads: "5.2K",
+      title: "Alumni Platform Starter",
+      description: "Complete MERN stack boilerplate with authentication, messaging, and mentorship matching features",
+      downloads: "2.5K",
       category: "Full-Stack",
       lastUpdated: "2 days ago"
     },
     {
-      title: "React Component Library",
-      description: "Reusable UI components with Storybook documentation", 
-      downloads: "3.8K",
+      title: "Innovation Repository Kit",
+      description: "Project showcase platform with real-time uploads, search functionality, and collaboration features", 
+      downloads: "1.8K",
       category: "Frontend",
       lastUpdated: "1 week ago"
     },
     {
-      title: "API Rate Limiter Middleware",
-      description: "Express.js middleware for API rate limiting and security",
-      downloads: "2.1K", 
-      category: "Backend",
+      title: "AI Financial Assistant Template",
+      description: "Financial AI chatbot template with market data integration and portfolio analysis",
+      downloads: "1.2K", 
+      category: "AI/ML",
       lastUpdated: "3 days ago"
     },
     {
-      title: "Docker Development Setup",
-      description: "Multi-container development environment configuration",
-      downloads: "4.5K",
-      category: "DevOps", 
+      title: "Educational Platform Base",
+      description: "Educational platform foundation with user management, course structure, and progress tracking",
+      downloads: "3.1K",
+      category: "Full-Stack", 
       lastUpdated: "5 days ago"
     },
   ];
 
-  // Learning resources
+  // Updated Learning resources based on real projects
   const learningResources = [
     {
-      title: "Modern JavaScript Fundamentals",
+      title: "Building Alumni Platforms",
       type: "Tutorial Series",
-      lessons: 24,
-      duration: "6 hours",
-      difficulty: "Beginner",
+      lessons: 18,
+      duration: "5 hours",
+      difficulty: "Intermediate",
       rating: 4.8
     },
     {
-      title: "System Design Principles",
+      title: "AI Integration in Web Apps",
       type: "Course",
-      lessons: 18,
-      duration: "8 hours", 
+      lessons: 15,
+      duration: "6 hours", 
       difficulty: "Advanced",
       rating: 4.9
     },
     {
-      title: "API Development Best Practices",
+      title: "Real-time Features with Socket.io",
       type: "Workshop",
-      lessons: 12,
-      duration: "4 hours",
+      lessons: 10,
+      duration: "3 hours",
       difficulty: "Intermediate", 
       rating: 4.7
     },
@@ -216,8 +217,9 @@ const ProjectSection = forwardRef((props, ref) => {
                   
                   <div className="flex justify-between items-center">
                     <a
-                    
                       href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center text-sm text-slate-600 dark:text-slate-400 hover:text-[#D97706] transition-colors"
                     >
                       <Github className="w-4 h-4 mr-1" />
@@ -225,6 +227,8 @@ const ProjectSection = forwardRef((props, ref) => {
                     </a>
                     <a
                       href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-[#D97706] text-white text-sm rounded-lg hover:bg-[#F59E0B] transition-colors flex items-center"
                     >
                       <ExternalLink className="w-4 h-4 mr-1" />
@@ -382,8 +386,10 @@ const ProjectSection = forwardRef((props, ref) => {
           <span className="inline-flex items-center rounded-full px-3 sm:px-4 py-1.5 text-xs sm:text-sm bg-white/10 dark:bg-slate-800/20 backdrop-blur-sm border border-white/10 dark:border-slate-700/20 mb-4 sm:mb-6">
             <span className="inline-block w-2 h-2 rounded-full bg-[#D97706] mr-2 animate-pulse"></span>
             <span className="bg-gradient-to-r from-slate-700 dark:from-slate-100 to-slate-500 dark:to-slate-300 bg-clip-text text-transparent font-medium">
-              Creative Project Hub
+             <span className="inline-flex items-center rounded-full px-3 sm:px-4 py-1.5 text-xs sm:text-sm bg-white/10 dark:bg-slate-800/20 backdrop-blur-sm border border-white/10 dark:border-slate-700/20 mb-4 sm:mb-6">
+               Creative Project Hub
             </span>
+          </span>
           </span>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 relative">
@@ -391,6 +397,13 @@ const ProjectSection = forwardRef((props, ref) => {
               Project 
             </span>
             <span className="text-[#D97706] dark:text-[#F59E0B]"> Gallery</span>
+            <motion.span
+              className="absolute -z-10 inset-0 text-[#D97706]/5 dark:text-[#F59E0B]/10 blur-lg"
+              animate={{ opacity: [0.5, 0.2, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              Project Gallery
+            </motion.span>
           </h2>
 
           <motion.p
@@ -400,7 +413,7 @@ const ProjectSection = forwardRef((props, ref) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Discover amazing projects, download code templates, and accelerate your development with our curated resources.
+            Discover real-world projects, download code templates, and accelerate your development with our curated resources from successful student innovations.
           </motion.p>
         </motion.div>
 
@@ -432,6 +445,60 @@ const ProjectSection = forwardRef((props, ref) => {
           transition={{ duration: 0.3 }}
         >
           {renderTabContent()}
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          {/* Button container */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/projects">
+              <motion.button
+                className="group px-8 py-4 rounded-lg overflow-hidden bg-gradient-to-r from-[#D97706] to-[#F59E0B] relative"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {/* Animated light effect */}
+                <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 skew-x-[45deg] transform -translate-x-full group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                </div>
+
+                <span className="relative z-10 text-white font-medium text-lg flex items-center">
+                  Explore All Projects & Templates
+                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </motion.button>
+            </Link>
+
+            {/* GitHub themed Contribute button */}
+            <a href="https://github.com/mayankyadav1711/ColleGPT-Projects" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                className="group px-6 py-3 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 border border-slate-700 dark:border-slate-600 rounded-lg overflow-hidden relative shadow-lg"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {/* GitHub button hover effect */}
+                <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 skew-x-[45deg] transform -translate-x-full group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                </div>
+
+                <span className="relative z-10 text-white font-medium flex items-center">
+                  <Github className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  Contribute to Projects
+                  <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </motion.button>
+            </a>
+          </div>
+          
+          <p className="mt-4 text-slate-500 dark:text-slate-400">
+            Join our community of innovative student developers
+          </p>
         </motion.div>
       </div>
     </section>

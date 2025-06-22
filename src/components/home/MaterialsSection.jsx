@@ -74,20 +74,12 @@ const MaterialsSection = forwardRef((props, ref) => {
   // Project categories
   const projectCategories = [
     {
-      title: "Web Development",
-      icon: Code,
+      title: "Innovation Platforms",
+      icon: Lightbulb,
       description: "Modern web applications and responsive designs",
       color: "from-amber-500 to-yellow-400",
       subjects: ["React.js", "Next.js", "Node.js", "MongoDB"],
       stats: { projects: "120+", tutorials: "80+", rating: "4.9" }
-    },
-    {
-      title: "Mobile Apps",
-      icon: Smartphone,
-      description: "Cross-platform mobile applications",
-      color: "from-orange-500 to-amber-400",
-      subjects: ["React Native", "Flutter", "Swift", "Kotlin"],
-      stats: { projects: "85+", tutorials: "60+", rating: "4.8" }
     },
     {
       title: "AI & Machine Learning",
@@ -110,44 +102,44 @@ const MaterialsSection = forwardRef((props, ref) => {
   // Project collections with real data
   const projectCollections = [
     {
-      title: "Full-Stack Project Templates",
-      type: "Complete Application Starters",
-      subjects: 8,
-      items: 25,
+      title: "Saarthi - Alumni Engagement Platform",
+      type: "Full-Stack Web Application",
+      subjects: 4,
+      items: 8,
       rating: 4.9,
       downloads: "15K+",
       premium: true,
       lastUpdated: "January 2025"
     },
     {
-      title: "Open Source Contribution Guide",
-      type: "Community Projects & Guidelines",
-      subjects: 12,
-      items: 50,
-      rating: 4.8,
-      downloads: "25K+",
-      premium: false,
-      lastUpdated: "December 2024"
+     title: "Unite-Bharat - Innovation Repository",
+    type: "SIH Finalist Project Platform",
+    subjects: 5,
+    items: 12,
+    rating: 4.8,
+    downloads: "3.2K+",
+    premium: false,
+    lastUpdated: "December 2024"
     },
     {
-      title: "AI/ML Project Showcase",
-      type: "Machine Learning Applications",
-      subjects: 6,
-      items: 30,
-      rating: 4.7,
-      downloads: "18K+",
-      premium: true,
-      lastUpdated: "January 2025"
+     title: "Nivesh AI - Investment Assistant",
+    type: "AI-Powered Financial Platform",
+    subjects: 6,
+    items: 10,
+    rating: 4.7,
+    downloads: "1.8K+",
+    premium: true,
+    lastUpdated: "January 2025"
     },
     {
-      title: "Beginner-Friendly Projects",
-      type: "Starter Projects & Tutorials",
-      subjects: 10,
-      items: 40,
-      rating: 4.9,
-      downloads: "35K+",
-      premium: false,
-      lastUpdated: "January 2025"
+      title: "ColleGPT Project Templates",
+    type: "Educational Platform Components",
+    subjects: 8,
+    items: 15,
+    rating: 4.9,
+    downloads: "5.1K+",
+    premium: false,
+    lastUpdated: "January 2025"
     },
   ];
 
